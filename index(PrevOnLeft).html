@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Computing in Surgery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Comouting in Surgery, Image Guidance." />
+        <link rel="stylesheet" href="css/style_vertical.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/button(prevOnLeft).css" type="text/css"/>
+    </head>
+    <style>
+        <!--a{
+            color:#fff;
+			font-family:Georgia;
+			font-style:italic;
+            text-decoration:none;
+        }-->
+        a:hover{
+            text-decoration:underline;
+        }
+        span.reference{
+            position:fixed;
+            left:10px;
+            bottom:10px;
+            font-size:13px;
+            font-weight:bold;
+        }
+        span.reference a{
+            color:#fff;
+            text-shadow:1px 1px 1px #000;
+            padding-right:20px;
+        }
+        span.reference a:hover{
+            color:#ddd;
+            text-decoration:none;
+        }
+
+    </style>
+    <body>
+        <div class="section black" id="section1">
+            <h2>Computing in Surgery - Image Guidance</h2>
+            <p>
+                Write a nice intro to this topic
+				...or something.
+            </p>
+        </div>
+        <div class="section white" id="section2">
+            <h2>History</h2>
+            <p>
+                Pretty obvious we write some history.
+            </p>
+        </div>
+        <div class="section black" id="section3">
+            <h2>Augmented Reality</h2>
+            <p>
+                And now we talk about augmented reality.
+            </p>
+        </div>
+		<div class="section white" id="section4">
+			<h2>Augmented Reality - Sub Page</h2>
+			<p>
+				Can have as many sub pages for each section as we like.
+			</p>
+        </div>
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+		page=1;
+		lastPage=4;
+		mydiv = document.getElementById("prev-button");
+		mydiv.style.display = "none";
+            /*$(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1500,'easeInOutExpo');
+                    ///*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1000);
+                    //
+                    event.preventDefault();
+                });
+            })*/
+			function goToPage(toPage){
+				page = toPage;
+				$('html, body').stop().animate({
+						scrollTop: $("#section"+page).offset().top
+                    }, 1500,'easeInOutExpo');
+				event.preventDefault();
+				if(page==1){
+					mydiv = document.getElementById("prev-button");
+					mydiv.style.display = "none";
+					mydiv = document.getElementById("next-button");
+					mydiv.style.display = "block";
+				}else
+				if(page==lastPage){
+					mydiv = document.getElementById("prev-button");
+					mydiv.style.display = "block";
+					mydiv = document.getElementById("next-button");
+					mydiv.style.display = "none";
+				}else{
+					mydiv = document.getElementById("prev-button");
+					mydiv.style.display = "block";
+					mydiv = document.getElementById("next-button");
+					mydiv.style.display = "block";
+				}
+			}
+			function nextPage(){
+				if(page!=lastPage){
+					page++;
+					$('html, body').stop().animate({
+						scrollTop: $("#section"+page).offset().top
+                    }, 1500,'easeInOutExpo');
+					event.preventDefault();
+				}
+				if(page==2){
+					mydiv = document.getElementById("prev-button");
+					mydiv.style.display = "block"; 
+				}else 
+				if(page==lastPage){
+					mydiv = document.getElementById("next-button");
+					mydiv.style.display = "none"; 
+				}
+			}
+			function prevPage(){
+				if(page!=1){
+					page--;
+					$('html, body').stop().animate({
+						scrollTop: $("#section"+page).offset().top
+                    }, 1500,'easeInOutExpo');
+					event.preventDefault();
+				}
+				if(page==1){
+					mydiv = document.getElementById("prev-button");
+					mydiv.style.display = "none";
+				}
+				if(page!=lastPage){
+					mydiv = document.getElementById("next-button");
+					mydiv.style.display = "block";
+				}
+			}
+        </script>
+    </body>
+		<div id="top-floating-bar">
+            <div id="bar-text"><ul class="nav">
+				Computing in Surgery
+				<a onClick="goToPage(1);">Introduction</a>
+                <a onClick="goToPage(2);">History</a>
+                <a onClick="goToPage(3);">Augmented Reality</a>
+            </div></ul>
+        </div>
+		<div id="next-button">
+			<div id="button-text">
+				<a onClick="nextPage();" class="button">Next</a>
+			</div>
+		</div>
+		<div id="prev-button">
+			<a onClick="prevPage();" class="button">Prev</a>
+		</div>
+</html>
