@@ -27,12 +27,17 @@ body{
 	position:fixed;
 	bottom:0px;
 	right:0px;
+	font-family:Ariel;
+    font-size: 36px;
+	visibility:visible;
 }
 #prev-button{
 	position:fixed;
 	bottom:0px;
 	left:0px;
-	display:none;
+	font-family:Ariel;
+    font-size: 36px;
+	visibility:visible;
 }
 #button-text{
 	font-family:Ariel;

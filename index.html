@@ -15,7 +15,8 @@
             text-decoration:none;
         }-->
         a:hover{
-            text-decoration:underline;
+            text-decoration:none;
+			cursor: pointer;
         }
         span.reference{
             position:fixed;
@@ -36,6 +37,20 @@
 
     </style>
     <body>
+		<div id="top-floating-bar">
+            <div id="bar-text"><ul class="nav">
+				Computing in Surgery
+				<a onClick="goToPage(1);">Introduction</a>
+                <a onClick="goToPage(2);">History</a>
+                <a onClick="goToPage(3);">Augmented Reality</a>
+            </div></ul>
+        </div>
+		<div id="next-button">
+			<a onClick="nextPage();" class="button">Next</a>
+		</div>
+		<div id="prev-button">
+			<a onClick="prevPage();" class="button">Prev</a>
+		</div>
         <div class="section black" id="section1">
             <h2>Computing in Surgery - Image Guidance</h2>
             <p>
@@ -68,46 +83,29 @@
         <script type="text/javascript">
 		page=1;
 		lastPage=4;
-		mydiv = document.getElementById("prev-button");
-		mydiv.style.display = "none";
-            /*$(function() {
-                $('ul.nav a').bind('click',function(event){
-                    var $anchor = $(this);
-                    
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1500,'easeInOutExpo');
-                    ///*
-                    if you don't want to use the easing effects:
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1000);
-                    //
-                    event.preventDefault();
-                });
-            })*/
+		mydiv = document.getElementById('prev-button');
+		mydiv.style.visibility = "hidden";
 			function goToPage(toPage){
 				page = toPage;
 				$('html, body').stop().animate({
 						scrollTop: $("#section"+page).offset().top
                     }, 1500,'easeInOutExpo');
-				event.preventDefault();
 				if(page==1){
-					mydiv = document.getElementById("prev-button");
-					mydiv.style.display = "none";
-					mydiv = document.getElementById("next-button");
-					mydiv.style.display = "block";
+					mydiv = document.getElementById('prev-button');
+					mydiv.style.visibility = "hidden";
+					mydiv = document.getElementById('next-button');
+					mydiv.style.visibility = "visible";
 				}else
 				if(page==lastPage){
-					mydiv = document.getElementById("prev-button");
-					mydiv.style.display = "block";
-					mydiv = document.getElementById("next-button");
-					mydiv.style.display = "none";
+					mydiv = document.getElementById('prev-button');
+					mydiv.style.visibility = "visible";
+					mydiv = document.getElementById('next-button');
+					mydiv.style.visibility = "hidden";
 				}else{
-					mydiv = document.getElementById("prev-button");
-					mydiv.style.display = "block";
-					mydiv = document.getElementById("next-button");
-					mydiv.style.display = "block";
+					mydiv = document.getElementById('prev-button');
+					mydiv.style.visibility = "visible";
+					mydiv = document.getElementById('next-button');
+					mydiv.style.visibility = "visible";
 				}
 			}
 			function nextPage(){
@@ -116,15 +114,14 @@
 					$('html, body').stop().animate({
 						scrollTop: $("#section"+page).offset().top
                     }, 1500,'easeInOutExpo');
-					event.preventDefault();
 				}
 				if(page==2){
-					mydiv = document.getElementById("prev-button");
-					mydiv.style.display = "block"; 
+					mydiv = document.getElementById('prev-button');
+					mydiv.style.visibility = "visible"; 
 				}else 
 				if(page==lastPage){
-					mydiv = document.getElementById("next-button");
-					mydiv.style.display = "none"; 
+					mydiv = document.getElementById('next-button');
+					mydiv.style.visibility = "hidden";
 				}
 			}
 			function prevPage(){
@@ -133,33 +130,16 @@
 					$('html, body').stop().animate({
 						scrollTop: $("#section"+page).offset().top
                     }, 1500,'easeInOutExpo');
-					event.preventDefault();
 				}
 				if(page==1){
-					mydiv = document.getElementById("prev-button");
-					mydiv.style.display = "none";
+					mydiv = document.getElementById('prev-button');
+					mydiv.style.visibility = "hidden";
 				}
 				if(page!=lastPage){
-					mydiv = document.getElementById("next-button");
-					mydiv.style.display = "block";
+					mydiv = document.getElementById('next-button');
+					mydiv.style.visibility = "visible";
 				}
 			}
         </script>
     </body>
-		<div id="top-floating-bar">
-            <div id="bar-text"><ul class="nav">
-				Computing in Surgery
-				<a onClick="goToPage(1);">Introduction</a>
-                <a onClick="goToPage(2);">History</a>
-                <a onClick="goToPage(3);">Augmented Reality</a>
-            </div></ul>
-        </div>
-		<div id="next-button">
-			<div id="button-text">
-				<a onClick="nextPage();" class="button">Next</a>
-			</div>
-		</div>
-		<div id="prev-button">
-			<a onClick="prevPage();" class="button">Prev</a>
-		</div>
 </html>
