@@ -57,6 +57,11 @@
                 Write a nice intro to this topic
 				...or something.
             </p>
+			<!--For iPad -->
+			<div id="intro-next-button">
+			<a onClick="nextPage();" class="button">Next</a>
+			</div>
+			<!-- End for iPad -->
         </div>
         <div class="section white" id="section2">
             <h2>History</h2>
@@ -76,37 +81,81 @@
 				Can have as many sub pages for each section as we like.
 			</p>
         </div>
+		<div class="section black" id="section5">
+			<h2>Testing Purposes - Page 5</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
+		<div class="section white" id="section6">
+			<h2>Testing Purposes - Page 6</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
+		<div class="section black" id="section7">
+			<h2>Testing Purposes - Page 7</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
+		<div class="section white" id="section8">
+			<h2>Testing Purposes - Page 8</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
+		<div class="section black" id="section9">
+			<h2>Testing Purposes - Page 9</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
+		<div class="section white" id="section10">
+			<h2>Testing Purposes - Page 10</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
+		<div class="section black" id="section11">
+			<h2>Testing Purposes - Page 11</h2>
+			<p>
+				For testing.
+			</p>
+        </div>
 
         <!-- The JavaScript -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
         <script type="text/javascript">
 		page=1;
-		lastPage=4;
+		lastPage=11;
 		mydiv = document.getElementById('prev-button');
 		mydiv.style.visibility = "hidden";
+		document.getElementById('intro-next-button').style.visibility = "hidden";
+		browserThing();
+		onipad = false;
 			function goToPage(toPage){
 				page = toPage;
 				$('html, body').stop().animate({
-						scrollTop: $("#section"+page).offset().top
-                    }, 1500,'easeInOutExpo');
-				if(page==1){
+						scrollTop: $("#section"+page).offset().top}, 1500,'easeInOutExpo');
+					if(page==1){
 					mydiv = document.getElementById('prev-button');
 					mydiv.style.visibility = "hidden";
 					mydiv = document.getElementById('next-button');
 					mydiv.style.visibility = "visible";
-				}else
-				if(page==lastPage){
-					mydiv = document.getElementById('prev-button');
-					mydiv.style.visibility = "visible";
-					mydiv = document.getElementById('next-button');
-					mydiv.style.visibility = "hidden";
-				}else{
-					mydiv = document.getElementById('prev-button');
-					mydiv.style.visibility = "visible";
-					mydiv = document.getElementById('next-button');
-					mydiv.style.visibility = "visible";
-				}
+					}else
+					if(page==lastPage){
+						mydiv = document.getElementById('prev-button');
+						mydiv.style.visibility = "visible";
+						mydiv = document.getElementById('next-button');
+						mydiv.style.visibility = "hidden";
+					}else{
+						mydiv = document.getElementById('prev-button');
+						mydiv.style.visibility = "visible";
+						mydiv = document.getElementById('next-button');
+						mydiv.style.visibility = "visible";
+					}
 			}
 			function nextPage(){
 				if(page!=lastPage){
@@ -138,6 +187,19 @@
 				if(page!=lastPage){
 					mydiv = document.getElementById('next-button');
 					mydiv.style.visibility = "visible";
+				}
+			}
+			function browserThing(){
+				if(navigator.platform=='iPad'){
+					alert('Sorry! - Not ready for iPad.');
+					/*document.getElementById('next-button').style.display='none';
+					document.getElementById('prev-button').style.display='none';
+					onipad = true;
+					var introNext = document.getElementById('intro-next-button');
+					introNext.style.position="relative";
+					introNext.style.left="825px";
+					introNext.style.top="275px";
+					introNext.style.visibility="visible";*/
 				}
 			}
         </script>
