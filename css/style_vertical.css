@@ -5,10 +5,29 @@
 }
 body{
     background:#000;
-    font-family:Georgia;
-    font-size: 34px;
-    font-style: italic;
+    font-size: 36px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     letter-spacing:-1px;
+}
+h1{
+	font-family:Franchise;
+	letter-spacing:-1px;
+	font-style: normal;
+}
+h2{
+	font-family:Franchise;
+	letter-spacing:-1px;
+	font-style: normal;
+}
+h3{
+	font-family:Franchise;
+	letter-spacing:-1px;
+	font-style: normal;
+}
+@font-face {
+	font-family: Franchise;
+	src: url(fonts/Franchise.ttf) format('opentype');
+	font-style:normal;
 }
 #bar-text{
 	color:#bbb;
@@ -48,7 +67,6 @@ body{
     height:4000px;
     width:100%;
     float:left;
-    text-shadow:1px 1px 2px #f0f0f0;
 }
 .section h2{
     margin:50px 0px 30px 50px;
