@@ -42,6 +42,9 @@
 		-->
 
     </style>
+	<style type ="text/css">
+		ts {line-height: 100%; font-size: 22px}
+	</style>
     <body>
 		<div id="top-floating-bar">
             <div id="bar-text"><ul class="nav">
@@ -50,7 +53,7 @@
                 <a onClick="goToPage(2);">History</a>&nbsp;/&nbsp; 
 				<a onClick="goToPage(3);">Image Registration</a>&nbsp;/&nbsp; 
                 <a onClick="goToPage(17);">Augmented Reality</a>&nbsp;/&nbsp;
-				<a onClock="goToPage(2);">Camera Calibration</a>
+				<a onClock="goToPage(20);">Camera Calibration</a>
             </div></ul>
         </div>
 		<div id="next-button">
@@ -75,7 +78,8 @@
 		<!-- Image Registration  Starts Page 3 -->
 		<div class="section black" id="section3">
             <h2>Image Registration</h2>
-			<table width="100%" border="0" height="400">
+			<table width="90%" border="0" height="400"
+				   style="position:absolute; left:47px">
 				<tr>
 					<td style="width:50%;">
 						Comparing two images that need to be brought into the same spatial coordinates. <br />
@@ -99,7 +103,8 @@
         </div>
 		<div class="section white" id="section4">
             <h2>Image Registration</h2>
-            <table width="100%" border="0">
+            <table width="100%" border="0"
+				   style="position:absolute; left:47px">
 				<tr>
 					<td style="width:50%;font-size:30px;">
 						<h3> Rigid Registration</h3> <br />
@@ -118,13 +123,18 @@
         </div>
 		<div class="section black" id="section5">
             <h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="90%" border="0">
 				<tr>
-					<td style="width:50%;text-align:center">
+					<td style="width:50%;text-align:center"
+						rowspan="2">
 						<img src="mimages/ir3.gif" alt="Image Registration Image"/>
 					</td>
 					<td style="width:50%;">
-						<h3>Non-Rigid Registration</h3> <br />
+						<h3>Non-Rigid Registration</h3>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:50%;">
 						Must use features in the image that are invariant to translation and rotation. 
 						These feature points can then register the images using a method called landmark based registration method. <br />
 						Average 4-Step Method: <br />
@@ -143,7 +153,7 @@
 					<td style="width:50%;text-align:center;">
 						<img src="mimages/ir4.jpg" alt="Image Registration Image"/>
 					</td>
-					<td style="width:50%;vertical-align:center">
+					<td style="width:50%;">
 						<h3>Feature Detection</h3> <br />
 						Distinctive objects are manually or more preferably automatically detected in the images and can be represented by their point representatives. 
 						These points are called control points.<br /> <br />
@@ -153,7 +163,8 @@
         </div>
         <div class="section black" id="section7">
             <h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="100%" border="0"
+				   style="position:absolute; left:47px">
 				<tr>
 					<td style="width:50%;">
 						<h3>Feature Detection</h3> <br />
@@ -169,7 +180,8 @@
         </div>
 		<div class="section white" id="section8">
 			 <h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="100%" border="0"
+				   style="position:absolute; left:47px">
 				<tr>
 					<td style="width:50%;font-size:30px;">
 						<h3>Feature Based Methods</h3> <br />
@@ -178,7 +190,7 @@
 						Comparability of feature sets is assured by the feature detector. 
 						The number of common elements in the detected sets of features should be sufficiently high. 
 						Feature-Based Methods do not work directly with image intensity values but represent information on a higher level. 
-						This makes the method suitable for different kinds of imaging such as medical imaging. <br />
+						This makes the method suitable for different kinds of imaging such as medical imaging.
 					</td>
 					<td style="width:50%;">
 						<img src="mimages/ir6.png" alt="Image Registration Image"/>
@@ -204,13 +216,14 @@
         </div>
 		<div class="section white" id="section10">
 			<h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="100%" border="0"
+				   style="position:absolute; left:47px">
 				<tr>
-					<td style="width:50%;vertical-align:top;font-size:32px;">
-						<h3>Types of Features</h3> <br />
+					<td style="width:50%;vertical-align:top;">
+						<h3>Types of Features</h3><br />
 						Region Features detected by means of segmentation methods. 
 						Dependent on the accuracy of the segmentation method. 
-						Sub-pixel accuracy or registration can be achieved with iterative methods. <br />
+						Sub-pixel accuracy or registration can be achieved with iterative methods.
 						Line Features expressed by pairs of line ends or middle points.
 						Line detection can be done by standard edge detection methods like Canny detector or a detector based on the Laplacian of Gaussian. <br />
 					</td>
@@ -222,13 +235,13 @@
         </div>
 		<div class="section black" id="section11">
 			<h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="90%" border="0">
 				<tr>
 					<td style="width:50%;text-align:center">
-						<h3>Types of Features</h3> <br />
 						<img src="mimages/ir8.jpg" alt="Image Registration Image"/>
 					</td>
 					<td style="width:50%;">
+					<h3>Types of Features</h3> <br />
 					Point Features detected in most cases by following the definition of a point as a line intersection, centroid of closed-boundary region or local maxima of the wavelet transform. 
 					Defining corners is hard. Corner detection methods include SUSAN detector.
 					Point Features include corners.  <br />
@@ -259,12 +272,11 @@
 			<table width="100%" border="0">
 				<tr>
 					<td style="width:50%;text-align:center;">
-						<h3>Feature Matching</h3> <br />
 						<br />
 						<img src="mimages/ir10.jpg" alt="Image Registration Image"/>
 					</td>
 					<td style="width:50%;">
-					<br />
+					<h3>Feature Matching</h3> <br />
 					Area-Based Methods - Suits the registration of images which locally differ only by a translation. <br /> <br />
 					Any images deformed by more complex transformations will not register properly. <br /><br />
 					Another disadvantage is that there is a high chance that any two non-detailed areas will be matched incorrectly. 
@@ -274,7 +286,8 @@
         </div>
 		<div class="section white" id="section14">
 			<h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="100%" border="0"
+				   style="position:absolute; left:47px">
 				<tr>
 					<td style="width:50%;">
 						<h3>Feature Matching</h3> <br />
@@ -291,7 +304,7 @@
         </div>
 		<div class="section black" id="section15">
 			<h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="90%" border="0">
 				<tr>
 					<td style="width:50%;text-align:center;">
 						<br />
@@ -299,11 +312,11 @@
 					</td>
 					<td style="width:50%;font-size:29px;">
 						<h3>Feature Matching</h3> <br />
-						Fourier Methods - Preferred when there is varying conditions (varying light intensity) or the images are corrupted with noise.<br /> 
+						Fourier Methods - Preferred when there is varying conditions (varying light intensity) or the images are corrupted with noise. 
 						Phase correlation method is based on the Fourier Shift Theorem. <br />
 						This computes the cross-power spectrum of the images and looks for the location of the peak in its inverse. <br />
 						This method has robustness against noise and illumination levels. <br />
-						Time savings more significant as the image size increases. <br />
+						Time savings are more significant as the image size increases. 
 						In case of varying image scales, combine polar-log mapping and phase correlation.
 					</td>
 				</tr>
@@ -311,22 +324,21 @@
         </div>
 		<div class="section white" id="section16">
 			<h2>Image Registration</h2>
-			<table width="100%" border="0">
+			<table width="90%" border="0"
+				   style="position:absolute; left:47px">
 				<tr>
-					<td style="width:50%;font-size:22px;">
-						<h3>Feature Matching</h3> <br />
-						Mutual Information Methods - Leading technique in multi modal registration. Required for medical imaging. <br />
-						Comparison of anatomical and functional images of the patients body can lead to a a diagnosis that would be impossible to gain otherwise. <br />
-						Remote sensing allows for the exploitation of other sensor types too. <br />
+					<td style="width:50%;">
+						<h3>Feature Matching</h3>
+						<ts>Mutual Information Methods - Leading technique in multi modal registration. Required for medical imaging. 
+						Comparison of anatomical and functional images of the patients body can lead to a a diagnosis that would be impossible to gain otherwise. 
+						Remote sensing allows for the exploitation of other sensor types too.</ts>
 					</td>
 					<td style="width:50%;text-align:center;">
-						<br />
 						<img src="mimages/ir13.jpg" alt="Image Registration Image"/>
 					</td>
 				</tr>
 				<tr>
 					<td style="width:50%;text-align:center;">
-						<br />
 						<img src="mimages/ir14.png" alt="Image Registration Image"/>
 					</td>
 					<td style="width:50%;font-size:22px;">
@@ -342,9 +354,9 @@
 			
 			<table width="90%"
 				   style="border:0px solid white;
-						  align:center;">
+						  position:absolute; left:47px">
 			<tr>
-				<td style="padding:47px;">
+				<td>
 					With the increased use of robotic assisted, minimally invasive, surgery this has become the ideal environdment for such things as Augmented Reality. <br />
 					Traditional AR methods, however, such as overlaid AR, have suffered from a lack of depth perception. <br />
 					Even when the objects in question are rendered at the correct depth, the brain perceives the virtual images to be floating, thus hampering the process.
@@ -357,25 +369,32 @@
 			</table>
         </div>
 		<div class="section white" id="section18">
-			<h2>Augmented Reality</h2>
-			
-			<table width="90%"
+			<h2>Augmented Reality</h2>			
+			<table width="100%"
 				   style="border:0px solid white;
-						  align:center;">
+						  position:absolute; left:47px">
 			<tr>
-				<td style="padding:47px;">
-					To perceive the image as embedded the brain expects some form of occlusion/obstruction.<br />
-					
-				</td>
-				
 				<td>
-					<img src="augimages/gr4-manualnavigation.jpg" alt="Manual Navigation Image"/>
+					To perceive the image as embedded the brain expects some form of occlusion/obstruction.<br />
+					As such AR allowed the surgeon to view the medical imagery from a natural viewpoint <br />
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;<b>Positives</b>;<br />
+					 ~ The effectiveness and clinical benefit of AR has been widely recognised
+					</td>
+			</tr>
+			<tr></tr><tr></tr><tr></tr>
+			<tr>
+				<td>
+				&nbsp;&nbsp;&nbsp;&nbsp;<b>Negatives</b>;<br />
+					 ~ The application of the technique to cardiothoracic<br /> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or gastrointestinal surgery remains limited<br />
+					 ~ Tissue deformation can present significant challenge to AR displays<br />
 				</td>
 			</tr>
 			</table>
         </div>
 		<div class="section black" id="section19">
-			<h2>Testing Purposes - Page 11</h2>
+			<h2>Augmented Reality</h2>
 			<p>
 				For testing.
 			</p>
@@ -411,7 +430,7 @@
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
         <script type="text/javascript">
 		page=1;
-		lastPage=16;
+		lastPage=23;
 		mydiv = document.getElementById('prev-button');
 		mydiv.style.visibility = "hidden";
 		browserThing();
