@@ -16,11 +16,11 @@
 		<div id="top-floating-bar">
             <div id="bar-text"><ul class="nav">
 				&nbsp;&nbsp;Computing in Surgery &nbsp; &nbsp; &nbsp;   
-				<a onClick="goToPage(1);">Introduction</a>&nbsp; / &nbsp; 
-                <a onClick="goToPage(2);">History</a>&nbsp; / &nbsp; 
-				<a onClick="goToPage(3);">Image Registration</a>&nbsp; / &nbsp; 
-                <a onClick="goToPage(17);">Augmented Reality</a>&nbsp; / &nbsp;
-				<a onClick="goToPage(25);">Camera Calibration</a>
+				<a onClick="goToPage(2);">Introduction</a>&nbsp; / &nbsp; 
+                <a onClick="goToPage(3);">Image Registration</a>&nbsp; / &nbsp; 
+				<a onClick="goToPage(17);">Point-based Registration</a>&nbsp; / &nbsp; 
+                <a onClick="goToPage(25);">Augmented Reality</a>&nbsp; / &nbsp;
+				<a onClick="goToPage(33);">Camera Calibration</a>
             </div>
         </div>
 		<div id="next-button">
@@ -29,17 +29,11 @@
 		<div id="prev-button">
 			<a onClick="prevPage();" class="button">Prev</a>
 		</div>
-        <div class="section black" id="section1">
+        <div class="section white" id="section2">
             <h2>Computing in Surgery - Image Guidance</h2>
             <p>
                 Write a nice intro to this topic <br />
 				...or something.
-            </p>
-        </div>
-        <div class="section white" id="section2">
-            <h2>History</h2>
-            <p>
-                Pretty obvious we write some history.
             </p>
         </div>
 		<!-- Image Registration  Starts Page 3 -->
@@ -311,8 +305,8 @@
 				</tr>
 			</table>
 		</div>
-		<div class="section white" id="section17">
-			<h2>Image Registration</h2>
+		<div class="section black" id="section17">
+			<h2>Point-based Registration</h2>
 			<table width="90%" border="0"
 				   style="border:0px solid white;
 						  position:absolute; left:47px">
@@ -325,7 +319,7 @@
 			</table>
 		</div>
 		<div class="section white" id="section18">
-			<h2>Image Registration</h2>
+			<h2>Point-based Registration</h2>
 			<table width="90%" border="0"
 				   style="border:0px solid white;
 						  position:absolute; left:47px">
@@ -338,24 +332,113 @@
 					<td width="5%"/>
 					<td style="width:50%;font-size:22px;">
 						<h2>Methods to solve the problem</h2>
-						Given that we have some form of similarity criteria, in this case usually points of interest in the image, we need to find a transformation model that satisfies these criteria well enough and then possibly optimize this model further. A first step is smoothing and re-sampling of the images, and then extracting features. We now have a measure of similarity, and can start computing the actual transformation.</td>
+						Given that we have some form of similarity criteria, in this case usually points of interest in the image, we need to find a transformation model that satisfies these criteria well enough and then possibly optimize this model further. A first step is smoothing and re-sampling of the images, and then extracting features. We now have a measure of similarity, and can start computing the actual transformation.
+					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="section white" id="section19">
-			<h2>Image Registration</h2>
+		<div class="section black" id="section19">
+			<h2>Point-based Registration</h2>
 			<table width="90%" border="0"
 				   style="border:0px solid white;
 						  position:absolute; left:47px">
 				<tr>
 					<td style="width:100%;font-size:22px;">
-						<h2>Point-based image registration</h2>
-						The Procrustes problem from linear algebra is a matrix approximation problem. In a more general sense, it concerns methods that are used to transform one set of data to represent another set of data as closely as possible. It was named after the greek robber Procrustes, who made his victims fit into his bed by either stretching them or cutting their legs off. This is, very roughly, what we want to do with images as well. Sometimes this process of image registration is also called Spatial Normalization.
+						<h2>Transformation Models</h2>
+						Most commonly named are rigid and non-rigid or elastic transformations, although there are semi-elastic or affine transformations that are used to approximate elastic transformations.
+						Rigid transformations are linear (i.e. can be described by a matrix). They consist of 3 rotations and 3 translations. This model can be refined by including stretches and shears, and still stays linear. That way, a non-rigid transformation can be crudely approximated. However, this crude approximation is not quite good enough – in practice it’s just not always accurate and thus we have to look for better ways of simulating transformations in the tissue.
+						A first step to get an elastic transformation is to split the image into parts and use different transformations on each of these parts. Strictly speaking, this is non-linear. However, this process can also introduce discontinuities in the image data. That would obviously be a problem in any real-world application, and so this “piecewise affine” transformation model is rarely used.
+						In most applications, where the actual patient anatomy might not match the reference models available, or where there is a lot of distortion in the images, we must therefore use a non-rigid transformation. This can have many different parameterisations, and depending on the tissue modelled more specific models such as fluid models might be used. For others a broader mathematical approach is appropriate, usually as a form of spline parameterisation. Non-rigid transformations are generally considered to yield much better results than affine or rigid ones.
+						The main goal with these transformation models is to get as much control over the degree of non-rigidity as possible. Otherwise, results can be very unstable and small distortions in the data could possibly create larger unwanted structures. Usually, this can be controlled by for example smoothness constraints such as modelling strain energy, or through a limited number of parameters especially in spline-based approaches.
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="section black" id="section17">
+		<div class="section white" id="section20">
+			<h2>Point-based Registration</h2>
+			<table width="90%" border="0"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
+				<tr style="vertical-align: top;">
+					<td style="width:50%;font-size:22px;">
+						<h2>B-spline based non-rigid registration</h2>
+						In this section, we will shortly introduce an algorithm for non-rigid registration developed by Rueckert et al. 1999. It uses an affine model to compensate for global motion of the subject (in this case the breast). Local changes are modelled using a free-form deformation model based on B-splines. The basic idea is to manipulate an underlying mesh of control points to produce a smooth transformation.					
+					</td>
+					<td width="5%"/>
+					<td style="width:50%;font-size:22px;">
+						<h2>What is a B-spline?</h2>
+						B-splines are, very roughly speaking, localized Bezier curves. Only neighbouring locations are considered for every point – thus the computational complexity remains low even for a high sampling rate. Another advantage is that they keep more to the original structure – even if other data points might be significantly distorted these will only affect the transformation in their direct neighbourhood.
+						<br/>The described properties make B-splines very suitable to model human tissue. They also give a certain amount of flexibility depending on what kind of tissue is modelled – less control points are best for modelling global non-rigid transformations, while many control points allow for highly local transformations.
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section black" id="section21">
+			<h2>Point-based Registration</h2>
+			<table width="90%" border="0"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
+				<tr style="vertical-align: top;">
+					<td style="width:50%;font-size:22px;">
+						<h2>How do they work, mathematically?</h2>
+						B-splines have so called basis functions. In the algorithm described here, described in Rueckert et al. 1999, the following are used:
+					</td>
+					<td width="5%"/>
+					<td style="width:50%;font-size:22px;">
+						<h2>B-spline basis functions</h2>
+						<img src="haskell/formula1.png" alt="Formula 1"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section white" id="section22">
+			<h2>Point-based Registration</h2>
+			<table width="90%" border="0"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
+				<tr style="vertical-align: top;">
+					<td style="width:50%;font-size:22px;">
+						<h2>Free-form deformations</h2>
+						From these B-splines, we can then define the free-form deformation on the object. Free-form deformations are techniques to manipulate any shape – simply put, maps between vector spaces that define a new position for every point in the given region. 
+						We can get coordinates in the transformed vector space using the 3D (since we are in a 3D space) tensor product equation, Where p<sub>(i,j,k)</sub> denotes a control point and <img src="haskell/formula3.png" alt="Formula 3"/> i.e. normalised coordinates. Note that a custom weight can be assigned to each coordinate to gain more local control over the transformation. It is suggested that this weight penalizes non-rigid transformations and doesn’t affect rigid (i.e. rotation and translation) changes.
+					</td>
+					<td width="5%"/>
+					<td style="width:50%;font-size:22px;">
+						<h2>Formulae</h2>
+						<img src="haskell/formula2.png" alt="Formula 2"/>
+						<br/><img src="haskell/formula3.png" alt="Formula 3"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section black" id="section23">
+			<h2>Point-based Registration</h2>
+			<table width="90%" border="0"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
+				<tr>
+					<td style="width:100%;font-size:22px;">
+						<h2>Refining the transformation</h2>
+						Once the transformed grid coordinates are computed, these can either be refined further or used to create the output. This step consists simply of linear or cubic interpolation to get continuous data from the grid. If further refinement needs to be done, Rueckert et al. suggest that a hierarchy based combination of multiple FFDs at different resolutions and grid sampling rates is used. This will usually lead to even better results.
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section white" id="section24">
+			<h2>Point-based Registration</h2>
+			<table width="90%" border="0"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
+				<tr>
+					<td style="width:100%;font-size:22px;">
+						<h2>Optimal transformations</h2>
+						An important part of this algorithm is the aforementioned similarity measure. This is applied to find the optimal affine transformation parameters before iterating through the different resolution levels of the B-spline grid transformation. Then during the iterations to find a non-rigid transformation, it is used as part of a cost function to determine when the transformation is good enough and the algorithm should terminate.
+						<br/><img src="haskell/bsplines.gif" alt="B-Spline transformation"/>
+				</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section black" id="section25">
 			<h2>Augmented Reality</h2>
 			
 			<table width="90%"
@@ -374,7 +457,7 @@
 			</tr>
 			</table>
         </div>
-		<div class="section white" id="section18">
+		<div class="section white" id="section26">
 			<h2>Augmented Reality</h2>			
 			<table width="100%"
 				   style="border:0px solid white;
@@ -399,7 +482,7 @@
 			</tr>
 			</table>
         </div>
-		<div class="section black" id="section19">
+		<div class="section black" id="section27">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style="border:0px solid white;
@@ -419,7 +502,7 @@
 			</tr>
 			</table>
         </div>
-		<div class="section white" id="section20">
+		<div class="section white" id="section28">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style="border:0px solid white;
@@ -436,7 +519,7 @@
 			</tr>
 			</table>
         </div>
-		<div class="section black" id="section21">
+		<div class="section black" id="section29">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style="border:0px solid white;
@@ -470,7 +553,7 @@
 			</tr>
 			</table>
         </div>
-		<div class = "section white" id = "section22">
+		<div class = "section white" id = "section30">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style = "border:0px solid white;
@@ -491,7 +574,7 @@
 			</tr>
 			</table>
         </div>
-		<div class="section black" id="section23">
+		<div class="section black" id="section31">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style="border:0px solid white;
@@ -510,7 +593,7 @@
 			</tr>			
 			</table>
         </div>
-		<div class="section white" id="section24">
+		<div class="section white" id="section32">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style="border:0px solid white;
@@ -538,7 +621,7 @@
         </div>
 		
 
-		<div class="section black" id="section25">
+		<div class="section black" id="section33">
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr>
@@ -564,7 +647,7 @@
         </div>
 		
 
-		<div class="section white" id="section26">
+		<div class="section white" id="section34">
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
@@ -586,7 +669,7 @@
         </div>
 		
 
-		<div class="section black" id="section27">
+		<div class="section black" id="section35">
 						<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top">
@@ -619,7 +702,7 @@
         </div>
 		
 		
-		<div class="section white" id="section28">
+		<div class="section white" id="section36">
 			<h2>Camera Calibration</h2>
 			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
 			<p style="width:90%;text-align:left;font-size:22px;">Finally, while the equations for this model could be modeled in an Euclidean geometry, we might  (I insist) use an alternative solution, quite  fit for our purpose : <u>homogeneous coordinates</u> and <u>projective geometry</u>.<br /><br />
@@ -635,7 +718,7 @@
         </div>
 		
 
-		<div class="section black" id="section29">
+		<div class="section black" id="section37">
 			<h2>Camera Calibration</h2>
 			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
 			<p style ="width:90%;font-size:22px;"> - this also means that we can model changes of coordinate system (mainly, a rotation and a translation) by product of matrices; <br/ >
@@ -648,7 +731,7 @@
         </div>
 		
 
-		<div class="section white" id="section30">
+		<div class="section white" id="section38">
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;font-size:22px;">
@@ -680,7 +763,7 @@
 			</div>
         </div>
 		
-		<div class="section black" id="section31">
+		<div class="section black" id="section39">
 			<h2>Camera calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
@@ -720,7 +803,7 @@
         </div>
 		
 
-		<div class="section white" id="section32">
+		<div class="section white" id="section40">
 			<h2>Camera calibration</h2>
 			<table width="100%" border ="0">
 				<tr style="vertical-align:top;">
@@ -745,7 +828,7 @@
 				</tr>
 			</table>
         </div>
-		<div class="section black" id="section33">
+		<div class="section black" id="section41">
 			<h2>Camera calibration</h2>
 			<h3 style="font-size:30px;text-align:center;">Is this it?</h3> <br />			
 			<p style="width:90%;font-size:22px;text-align:left;">
@@ -764,7 +847,7 @@
 				Many of these application might need an algorithm with a higher precision than the Direct Linear Method. For more info, Tsai's and Zhang's writings provide some non-linear methods for more specific needs. Also there's a large literature on the subject, even on the Internet. Check it out!
 			</p>
         </div>
-		<div class="section white" id="section34">
+		<div class="section white" id="section42">
 			<div class="section white" id="section26">
 			<h2>Camera calibration</h2>
 			<h3 style="font-size:30px;text-align:left;">Just for the curious</h3> <br />
@@ -784,8 +867,8 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>		
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
         <script type="text/javascript">
-		page=1;
-		lastPage=34;
+		page=2;
+		lastPage=42;
 		mydiv = document.getElementById('prev-button');
 		mydiv.style.visibility = "hidden";
 		browserThing();
