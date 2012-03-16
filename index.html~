@@ -335,7 +335,6 @@
 						With a given three-dimensional model of the patient, it is not always easy to project it onto the patient. For example, he might be in a different position from when the scan was taken. Even if the tissue shapes match closely, we still need to find the right translation and rotation parameters to successfully map the scan onto the patient. In more difficult cases, an object of interest such as a tumour might have shrunk or grown since the scan, or there might be new tumours that appeared recently. A good projection system should take into account all such transformations or changes of tissue and still map the scan data in a satisfying way. The problems can be summarized into the following categories:
 						<ul><li>Motion correction</li><li>Distortion correction</li><li>Alignment of images obtained at different times or with different imaging parameters</li></ul>					
 					</td>
-					<td width="5%"/>
 					<td style="width:50%;font-size:22px;">
 						<h2>Methods to solve the problem</h2>
 						Given that we have some form of similarity criteria, in this case usually points of interest in the image, we need to find a transformation model that satisfies these criteria well enough and then possibly optimize this model further. A first step is smoothing and re-sampling of the images, and then extracting features. We now have a measure of similarity, and can start computing the actual transformation.</td>
