@@ -396,7 +396,14 @@
 			<tr>
 				<td>
 				Techniques such as P-Q Space Rendering provide see-through vision of embedded virtual objects.
-				These maintain the projected anatomical detail of the eposed surface whilst aiding the surgery.
+				These maintain the projected anatomical detail of the eposed surface whilst aiding the surgery.<br />
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:10px">
+					<br />
+					<img src="augimages/PQ.jpg" alt="PQ Space Rendering"/><br />
+					images curtosy of: http://www.cs.rochester.edu/~bh/igs/
 				</td>
 			</tr>
 			</table>
@@ -411,7 +418,10 @@
 				The idea of P-Q Space Rendering is to render the exposed surface as a translucent layer whilst ensuring that sufficient detail remains to aid both navigation and depth cue-ing. <br />
 				The surface geometry is based on p-q space representation. 'p' and 'q' represent the slope of the surface along the x and y axes, respectively.
 				</td>
-				<td width="50%"></td>
+				<td width="15%"></td>
+				<td>
+					<img src="augimages/VR.jpg" alt="Good VR Examples"/>
+				</td>
 			</tr>
 			</table>
         </div>
@@ -478,18 +488,15 @@
 			<tr>
 				<td style="font-size: 25px">
 					Given the previous equation, α is assumed negliable. However when using endoscopes this cannot be assumed as the camera and light source are assumed to be near the surface.
-					As such, the image irradiance in this situation can be described by a constant of the camera parametres, multipled by the surface albedo, the angle between the incident ray and surface normal and a monotomically decreasing function of the surface point and light source.
-				</td>
-				<td width="50%"></td>
-			</tr>
-			<tr>
-				<td style="font-size: 25px">
+					As such, the image irradiance in this situation can be described by a constant of the camera parametres, multipled by the surface albedo, the angle between the incident ray and surface normal and a monotomically decreasing function of the surface point and light source.<br />
 					<br />
 					When using p-q space rendering the surfaces normals for each pixel are extracted (using linear local shape-from-shading algorithms derived from the necessary camera and lighting constraints). 
 					Given a 3D tomographic model, the p-q components are then extracted.
 				</td>
-				<td width="50%"></td>
-			</tr>
+				<td width="50%">
+					<img src = "augimages/more PQ.jpg" alt = "more PQ"/>
+				</td>
+			</tr>			
 			</table>
         </div>
 		<div class="section white" id="section24">
@@ -500,9 +507,21 @@
 			<tr>
 				<td>
 					In P-Q Space representation, the angle between the normal vectors both before and after rigid body registration will remain the same for every surface point.
-					This means that local deformation is identified where the angle diverts from the overall mean of the 3D model.
+					This means that local deformation is identified where the angle diverts from the overall mean of the 3D model. <br />
+					<br />
+					a) A video image of a deformed airway <br />
+					b) The PQ deformation map<br />
+					c) and d) The 3D rendered images
 				</td>
-				<td width="50%"></td>
+				<td width="25%">
+					<img src = "augimages/deformation.jpg" alt = " tissue deformation"/>
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:10px">
+				image curtosy of:<br />
+				Medical Image Computing and Computer-assisted Intervention - MICCAI 2003: 6th International Conference, Montréal, Canada, November 2003 : Proceedings
+				</td>
 			</tr>
 			</table>
         </div>
