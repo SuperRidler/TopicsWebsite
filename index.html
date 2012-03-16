@@ -641,9 +641,9 @@
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
-					<td style="width:40%;font-size:15px;">
-						<br /> 
-						<img src="ccimages/cc2.png" alt="Camera Calibration: failed import;"/> <br />.
+					<td style="width:40%;font-size:15px;text-align:center;vertical-align:center;">
+						<br /> <br /> <br /> <br /> <br /> 
+						&nbsp; &nbsp; &nbsp; &nbsp; <img src="ccimages/cc2.png" alt="Camera Calibration: failed import;"/> <br />.
 					</td>
 					<td style="width:60%;font-size:22px;">
 						<h3 style="font-size:30px;text-align:center;">How does it work?</h3> <br />
@@ -654,7 +654,7 @@
 					</td>					
 				</tr>	
 			</table>
-			<p style="font-size:22px;width:80%;text-align:left;">One smart approach was to use a combination of both methods in order to reduce the number of necessary takes on the algorithm (can go as high as 5 times more measurements than unknowns), without significant loss in accuracy.
+			<p style="font-size:22px;width:90%;text-align:left;">One smart approach was to use a combination of both methods in order to reduce the number of necessary takes on the algorithm (can go as high as 5 times more measurements than unknowns), without significant loss in accuracy.
 			</p><br />
         </div>
 		
@@ -664,11 +664,11 @@
 			<table width="100%" border="0">
 				<tr style="vertical-align:top">
 					<td style="width:50%;font-size:22px;">
-						<h3 style="font-size:30px;text-align:left;">How does it work?</h3> <br /><br />
-						<h3 style="font-size:26px;text-align:left;">Some food for thought: </h3>
-						<p style="width:90%;text-align:left;"> -How do you construct an accurate, reliable model of the typical situation?<br />
-										       -How should the camera be mathematically modelled? <br />
-										       -Finally, how do you actually put the algorithms in practice? 
+						<h3 style="font-size:30px;text-align:left;">&nbsp; &nbsp; &nbsp; &nbsp; How does it work?</h3> <br /><br />
+						<h3 style="font-size:26px;text-align:left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Some food for thought: </h3>
+						<p style="width:90%;text-align:left;"> - How do you construct an accurate, reliable model of the typical situation?<br />
+										       - How should the camera be mathematically modelled? <br />
+										       - Finally, how do you actually put the algorithms in practice? 
 						</p>
 					</td> 
 					<td style="width:50%;text-align:center;font-size:15px;"><br />
@@ -694,15 +694,15 @@
 		
 		<div class="section white" id="section36">
 			<h2>Camera Calibration</h2>
-			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
+			<h3 style="text-align:left;font-size:30px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; New way of seeing things! </h3>
 			<p style="width:90%;text-align:left;font-size:22px;">Finally, while the equations for this model could be modeled in an Euclidean geometry, we might  (I insist) use an alternative solution, quite  fit for our purpose : <u>homogeneous coordinates</u> and <u>projective geometry</u>.<br /><br />
 
     									     Things work somewhat like this:<br /><br />
-									     - if you represent a point (x, y) in the plane, its homogeneous coordinates are of the form  (xZ, yZ, Z), where Z is a randomly chosen real number (mainly, the set of all values that preserve this [xZ:yZ:Z] ratio <u>forms an equivalence class</u> in 3D space! ); you recover your original coordinates by setting Z to 1 - quite expected;<br />
-    									     - alternatively, a point caractherised by 3 (or ,more generally, n ) dimensions in Euclidean Space is caractherised by 4 (n+1, respectively) homogeneous coordinates, which preserve the initial ratio in the Euclidean Space (e.g. : [x1 :x2 : … : xn : 1] );<br /><br />
-									     Why does this simplify things in our problem? several reasons:<br />
-        								     - imagine that the new coordinate in the homogeneous system (in the case of the 2D point (x,y)) was actually a coordinate in 3D space, according to the 3rd axis.<br />      What would points in the same equivalence class represent?<br />What set would the set of points with fixed 3rd coordinates represent?<br />
-        								     - translation is easier representable as a square matrix ; for example, translation of points (x,y) to points (x+t1,y1+t2), with t1 t2 fixed constants, would be modelled by the equation:
+									     - If you represent a point (x, y) in the plane, its homogeneous coordinates are of the form  (xZ, yZ, Z), where Z is a randomly chosen real number (mainly, the set of all values that preserve this [xZ:yZ:Z] ratio <u>forms an equivalence class</u> in 3D space! ); you recover your original coordinates by setting Z to 1 - quite expected;<br />
+    									     - Alternatively, a point caractherised by 3 (or ,more generally, n ) dimensions in Euclidean Space is caractherised by 4 (n+1, respectively) homogeneous coordinates, which preserve the initial ratio in the Euclidean Space (e.g. : [x1 :x2 : … : xn : 1] );<br /><br />
+									     Why does this simplify things in our problem? Several reasons:<br />
+        								     - Imagine that the new coordinate in the homogeneous system (in the case of the 2D point (x,y)) was actually a coordinate in 3D space, according to the 3rd axis.<br />&nbsp; &nbsp; What would points in the same equivalence class represent?<br />&nbsp; &nbsp; &nbsp;What set would the set of points with fixed 3rd coordinates represent?<br />
+        								     - Translation is easier representable as a square matrix ; for example, translation of points (x,y) to points (x+t1,y+t2), with t1 t2 fixed constants, would be modelled by the equation:
 				<div style="text-align:center"><img src="ccimages/translationmat.png" alt="Camera Calibration: failed import;" align="center"/></div>
 			</p>
         </div>
@@ -710,9 +710,9 @@
 
 		<div class="section black" id="section37">
 			<h2>Camera Calibration</h2>
-			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
-			<p style ="width:90%;font-size:22px;"> - this also means that we can model changes of coordinate system (mainly, a rotation and a translation) by product of matrices; <br/ >
-							       - moreover, it’s possible to map points at infinity; there is one point (actually, an equivalence class) for each particular direction; one of the consequences is that you can solve equations involving parallel lines much more naturally;<br />
+			<h3 style="text-align:left;font-size:30px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; New way of seeing things! </h3>
+			<p style ="width:90%;font-size:22px;"> - This also means that we can model changes of coordinate system (mainly, a rotation and a translation) by product of matrices; <br/ >
+							       - Moreover, it’s possible to map points at infinity; there is one point (actually, an equivalence class) for each particular direction; one of the consequences is that you can solve equations involving parallel lines much more naturally;<br />
 			</p><br />
 			<div style="text-align:center;">
 					<img src="ccimages/thumbsup-inverted.jpeg" alt="Camera Calibration: failed import;"/>
@@ -726,7 +726,7 @@
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;font-size:22px;">
 					<td style="width:50%;text-align:left;">
-						<h3 style="font-size:30px;">What to do?</h3>
+						<h3 style="font-size:30px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; What to do?</h3>
 						<p style="width:80%;"> Well, whatever our purpose is, we can’t really do anything without finding that camera (or projection) matrix!<br />
    						    - Acting as a mapping between 3D homogeneous coordinates (4-by-1 matrices) and 2D homogeneous coordinates (3-by-1 matrices), our matrix will probably be 3-by-4:<br /><br />
 						    Believe it or not, this is the general equation.
@@ -762,7 +762,7 @@
 						<img src="ccimages/eq1b.gif" alt="Camera Calibration: failed import;"/><br />
 					</td>
 					<td style="width:60%;font-size:22px;">
-						<h3 style="font-size:30px;text-align:center;">Determining the camera matrix</h3> <br />
+						<h3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Determining the camera matrix</h3> <br />
 						<p style="width:90%;text-align:left;">
 							The mathematics is not too complicated - assuming you know how to work with matrices.<br /><br />
 
@@ -824,7 +824,7 @@
 			<p style="width:90%;font-size:22px;text-align:left;">
 				Well, nothing should stop you from implementing all this on your computer and start your career as a video game designer.<br />
 			</p><br />
-			<h3 style="font-size:26px;text-align:left;">Anything else to it?</h3>
+			<h3 style="font-size:26px;text-align:left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Anything else to it?</h3>
 			<p style="width:95%;font-size:22px;text-align:left;float:right;">
 				Definitely.<br />
 					<img src="ccimages/endoscope.jpg"align="right"/><br />
@@ -840,7 +840,7 @@
 		<div class="section white" id="section42">
 			<div class="section white" id="section26">
 			<h2>Camera calibration</h2>
-			<h3 style="font-size:30px;text-align:left;">Just for the curious</h3> <br />
+			<h3 style="font-size:30px;text-align:left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Just for the curious</h3> <br />
 			<p style="width:90%;font-size:22px;text-align:left;">
 				If the last one got your attention, the main algorithm for 3D recovery is quite easy: once you have two cameras (with known projection matrices P1, P2) which observe the same point, you have to solve the equations: <br />
 					<img src="ccimages/rec3d.gif" alt="Camera Calibration: failed import;"/><br />
