@@ -15,12 +15,12 @@
     <body>
 		<div id="top-floating-bar">
             <div id="bar-text"><ul class="nav">
-			&nbsp;&nbsp;Computing in Surgery&nbsp;&nbsp;&nbsp;&nbsp;
-				<a onClick="goToPage(2);">Introduction</a>&nbsp; / &nbsp; 
-                <a onClick="goToPage(3);">Image Registration</a>&nbsp; / &nbsp; 
-				<a onClick="goToPage(17);">Point-based Registration</a>&nbsp; / &nbsp; 
-                <a onClick="goToPage(25);">Augmented Reality</a>&nbsp; / &nbsp;
-				<a onClick="goToPage(33);">Camera Calibration</a>
+				&nbsp;&nbsp;Computing in Surgery &nbsp; &nbsp; &nbsp;   
+				<a onClick="goToPage(1);">Introduction</a>&nbsp; / &nbsp; 
+                <a onClick="goToPage(2);">History</a>&nbsp; / &nbsp; 
+				<a onClick="goToPage(3);">Image Registration</a>&nbsp; / &nbsp; 
+                <a onClick="goToPage(17);">Augmented Reality</a>&nbsp; / &nbsp;
+				<a onClick="goToPage(25);">Camera Calibration</a>
             </div>
         </div>
 		<div id="next-button">
@@ -29,12 +29,17 @@
 		<div id="prev-button">
 			<a onClick="prevPage();" class="button">Prev</a>
 		</div>
-        <div class="section white" id="section2">
+        <div class="section black" id="section1">
             <h2>Computing in Surgery - Image Guidance</h2>
             <p>
-                Image guidance is key within minimally invasive surgery.<br /><br />
-				It provides important information for the surgeon on an as-needs basis, through the use of computer generated image information. <br /><br />
-				MIS ensures shorter hospitals stays and smaller risks for the patients.
+                Write a nice intro to this topic <br />
+				...or something.
+            </p>
+        </div>
+        <div class="section white" id="section2">
+            <h2>History</h2>
+            <p>
+                Pretty obvious we write some history.
             </p>
         </div>
 		<!-- Image Registration  Starts Page 3 -->
@@ -44,8 +49,8 @@
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;">
-						<p>Comparing two images that need to be brought into the same spatial coordinates. <br />
-						The process of mapping spatial coordinates of one image onto another. <br /></p>
+						Comparing two images that need to be brought into the same spatial coordinates. <br />
+						The process of mapping spatial coordinates of one image onto another. <br />
 					</td>
 					<td style="width:50%;text-align:center;">
 						<img src="mimages/ir1.gif" alt="Image Registration Image"/>
@@ -56,9 +61,9 @@
 						<img src="mimages/ir2.jpg" alt="Image Registration Image"/>
 					</td>
 					<td style="width:50%;vertical-align:top;">
-						<p>Two types of registration. <br />
+						Two types of registration. <br />
 						&nbsp; &nbsp;- Rigid registration               : Image translated, rotated or scaled. <br />
-						&nbsp; &nbsp;- Non-rigid registration (Elastic) : Local-level deformation. E.g Regression or growth of disease.</p>
+						&nbsp; &nbsp;- Non-rigid registration (Elastic) : Local-level deformation. E.g Regression or growth of disease.
 					</td>
 				</tr>
 			</table>
@@ -69,13 +74,13 @@
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;font-size:30px;">
-						<h3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Rigid Registration</h3> <br />
-						<p>Intensity Based Rigid Registration <br />
+						<h3> Rigid Registration</h3> <br />
+						Intensity Based Rigid Registration <br />
 						- Iteratively optimises 6 rigid-body parameters describing the orientation of the 3D data-set using a similarity measure. <br />
 						Landmark Based Registration <br />
 						- Selection of landmarks/feature points and matching them on the images helps to correctly register them. <br />
 						Hybrid Registration <br />
-						- Tries to incorporate the the benefits of both landmark based registration and intensity based rigid registration. <br /></p>
+						- Tries to incorporate the the benefits of both landmark based registration and intensity based rigid registration. <br />
 					</td>
 					<td style="width:50%;text-align:center">
 						<img src="mimages/ir3.gif" alt="Image Registration Image"/>
@@ -124,10 +129,10 @@
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;">
-						<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Feature Detection</h3> <br />
-						<p>In the past objects were manually selected by an expert. Two main approaches to automate this task.<br /> <br />
+						<h3>Feature Detection</h3> <br />
+						In the past objects were manually selected by an expert. Two main approaches to automate this task.<br /> <br />
 						Area-Based Methods - More emphasis on the feature matching step than on their detection. First step essentially omitted. <br />
-						Feature-Based Methods - Significant regions, lines or points are understood as features here. </p>
+						Feature-Based Methods - Significant regions, lines or points are understood as features here. 
 					</td>
 					<td style="width:50%;">
 						<img src="mimages/ir5.jpg" alt="Image Registration Image"/>
@@ -141,13 +146,13 @@
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;font-size:30px;">
-						<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Feature Based Methods</h3> <br />
-						<p>Features should be spread all over the image and be efficiently detectable in both images. 
+						<h3>Feature Based Methods</h3> <br />
+						Features should be spread all over the image and be efficiently detectable in both images. 
 						Expected to be stable and stay at fixed positions. 
 						Comparability of feature sets is assured by the feature detector. 
 						The number of common elements in the detected sets of features should be sufficiently high. 
 						Feature-Based Methods do not work directly with image intensity values but represent information on a higher level. 
-						This makes the method suitable for different kinds of imaging such as medical imaging.</p>
+						This makes the method suitable for different kinds of imaging such as medical imaging.
 					</td>
 					<td style="width:50%;">
 						<img src="mimages/ir6.png" alt="Image Registration Image"/>
@@ -177,12 +182,12 @@
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;vertical-align:top;">
-						<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Types of Features</h3><br />
-						<p>Region Features detected by means of segmentation methods. <br />
-						Dependent on the accuracy of the segmentation method. <br />
-						Sub-pixel accuracy or registration can be achieved with iterative methods. <br />
-						Line Features expressed by pairs of line ends or middle points. <br />
-						Line detection can be done by standard edge detection methods like Canny detector or a detector based on the Laplacian of Gaussian.</p>
+						<h3>Types of Features</h3><br />
+						Region Features detected by means of segmentation methods. 
+						Dependent on the accuracy of the segmentation method. 
+						Sub-pixel accuracy or registration can be achieved with iterative methods.
+						Line Features expressed by pairs of line ends or middle points.
+						Line detection can be done by standard edge detection methods like Canny detector or a detector based on the Laplacian of Gaussian. <br />
 					</td>
 					<td style="width:50%;text-align:center">
 						<img src="mimages/ir7.png" alt="Image Registration Image"/>
@@ -211,13 +216,14 @@
 			<h2>Image Registration</h2>
 			<table width="100%" border="0">
 				<tr>
-					<td style="width:50%;">
-						<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Feature Matching</h3> <br />
-						<p>Matched by means of image intensity values in their close neighbourhoods, the feature spatial distribution, or the feature symbolic description.<br />
-						The correspondence between the features in the images is established.</p>
+					<td style="width:50%;text-align:center;">
+						<h3>Feature Matching</h3> <br />
+						Matched by means of image intensity values in their close neighbourhoods, the feature spatial distribution, or the feature symbolic description.
 					</td>
+				</tr>
+				<tr>
 					<td style="text-align:center;">
-						<br /> <br /> <br />
+						<br />
 						<img src="mimages/ir9.jpg" alt="Image Registration Image"/>
 					</td>
 				</tr>
@@ -246,10 +252,10 @@
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;">
-						<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Feature Matching</h3> <br />
+						<h3>Feature Matching</h3> <br />
 						<br />
-						<p>Correlation-Like Methods - Classic area-based methods including cross-correlation try to matching image intensities without structural analysis. <br /> <br />
-						This makes it very sensitive to intensity changes such as noise.</p>
+						Correlation-Like Methods - Classic area-based methods including cross-correlation try to matching image intensities without structural analysis. <br /> <br />
+						This makes it very sensitive to intensity changes such as noise.
 					</td>
 					<td style="width:50%;text-align:center;">
 						<br />
@@ -266,7 +272,7 @@
 						<br />
 						<img src="mimages/ir12.jpg" alt="Image Registration Image"/>
 					</td>
-					<td style="width:50%;font-size:29px;">
+					<td style="width:50%;font-size:30px;">
 						<h3>Feature Matching</h3> <br />
 						Fourier Methods - Preferred when there is varying conditions (varying light intensity) or the images are corrupted with noise. 
 						Phase correlation method is based on the Fourier Shift Theorem. <br />
@@ -283,11 +289,11 @@
 			<table width="90%" border="0"
 				   style="left:47px">
 				<tr>
-					<td style="width:50%;font-size:22px;">
-						<h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Feature Matching</h3>
-						<p>Mutual Information Methods - Leading technique in multi modal registration. Required for medical imaging. 
+					<td style="width:50%;">
+						<h3>Feature Matching</h3>
+						<ts>Mutual Information Methods - Leading technique in multi modal registration. Required for medical imaging. 
 						Comparison of anatomical and functional images of the patients body can lead to a a diagnosis that would be impossible to gain otherwise. 
-						Remote sensing allows for the exploitation of other sensor types too.</p>
+						Remote sensing allows for the exploitation of other sensor types too.</ts>
 					</td>
 					<td style="width:50%;text-align:center;">
 						<img src="mimages/ir13.jpg" alt="Image Registration Image"/>
@@ -305,154 +311,60 @@
 				</tr>
 			</table>
 		</div>
-		<div class="section black" id="section17">
-			<h2>Point-based Registration</h2>
-			<table width="100%" border="0"
+		<div class="section white" id="section17">
+			<h2>Image Registration</h2>
+			<table width="90%" border="0"
 				   style="border:0px solid white;
-						   left:250px">
+						  position:absolute; left:47px">
 				<tr>
-					<td style="width:100%;font-size:26px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Point-based image registration</h2>
-						<p style="width:850px;">The Procrustes problem from linear algebra is a matrix approximation problem. <br />
-						In a more general sense, it concerns methods that are used to transform one set of data to represent another set of data as closely as possible. <br />
-						It was named after the greek robber Procrustes, who made his victims fit into his bed by either stretching them or cutting their legs off. <br />
-						This is, very roughly, what we want to do with images as well. Sometimes this process of image registration is also called Spatial Normalization. <br />
+					<td style="width:100%;font-size:24px;">
+						<h2>Point-based image registration</h2>
+						The Procrustes problem from linear algebra is a matrix approximation problem. In a more general sense, it concerns methods that are used to transform one set of data to represent another set of data as closely as possible. It was named after the greek robber Procrustes, who made his victims fit into his bed by either stretching them or cutting their legs off. This is, very roughly, what we want to do with images as well. Sometimes this process of image registration is also called Spatial Normalization.
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div class="section white" id="section18">
-			<h2>Point-based Registration</h2>
+			<h2>Image Registration</h2>
 			<table width="90%" border="0"
-				   style="border:0px solid white;left:47px">
-				<tr style="vertical-align:top;">
-					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;How does it apply to image guidance?</h2>
-						<p>With a given three-dimensional model of the patient, it is not always easy to project it onto the patient. For example, he might be in a different position from when the scan was taken. Even if the tissue shapes match closely, we still need to find the right translation and rotation parameters to successfully map the scan onto the patient. In more difficult cases, an object of interest such as a tumour might have shrunk or grown since the scan, or there might be new tumours that appeared recently. A good projection system should take into account all such transformations or changes of tissue and still map the scan data in a satisfying way. The problems can be summarized into the following categories: </p>
-						<p>- Motion correction <br />- Distortion correction <br /> - Alignment of images obtained at different times or with different imaging parameters</p>					
-					</td>
-					<td width="5%"/>
-					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Methods to solve the problem</h2>
-						<p>Given that we have some form of similarity criteria, in this case usually points of interest in the image, we need to find a transformation model that satisfies these criteria well enough and then possibly optimize this model further. A first step is smoothing and re-sampling of the images, and then extracting features. We now have a measure of similarity, and can start computing the actual transformation.</p>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section black" id="section19">
-			<h2>Point-based Registration</h2>
-			<table width="90%" border="0"
-				   style="border:0px solid white;left:47px">
-				<tr>
-					<td style="width:100%;font-size:26px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Transformation Models</h2>
-						<p style="width:100%;">Most commonly named are rigid and non-rigid or elastic transformations, although there are semi-elastic or affine transformations that are used to approximate elastic transformations.<br />
-						Rigid transformations are linear (i.e. can be described by a matrix). They consist of 3 rotations and 3 translations. This model can be refined by including stretches and shears, and still stays linear. That way, a non-rigid transformation can be crudely approximated. However, this crude approximation is not quite good enough – in practice it’s just not always accurate and thus we have to look for better ways of simulating transformations in the tissue.<br />
-						In most applications, where the actual patient anatomy might not match the reference models available, or where there is a lot of distortion in the images, we must use a non-rigid transformation. Non-rigid transformations are generally considered to yield much better results than affine or rigid ones, and are based on spline or similar parameterisations.<br />
-						The main goal with these transformation models is to get as much control over the degree of non-rigidity as possible. Otherwise, results can be very unstable and small distortions in the data could possibly create larger unwanted structures. Usually, this can be controlled by for example smoothness constraints such as modelling strain energy, or through a limited number of parameters especially in spline-based approaches.</p>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section white" id="section20">
-			<h2>Point-based Registration</h2>
-			<table width="90%" border="0"
-				   style="border:0px solid white;left:47px">
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 				<tr style="vertical-align: top;">
 					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B-spline based non-rigid registration</h2>
-						<p>In this section, we will shortly introduce an algorithm for non-rigid registration developed by Rueckert et al. 1999.
-						It uses an affine model to compensate for global motion of the subject (in this case the breast). 
-						Local changes are modelled using a free-form deformation model based on B-splines. 
-						The basic idea is to manipulate an underlying mesh of control points to produce a smooth transformation. </p>					
+						<h2>How does it apply to image guidance?</h2>
+						With a given three-dimensional model of the patient, it is not always easy to project it onto the patient. For example, he might be in a different position from when the scan was taken. Even if the tissue shapes match closely, we still need to find the right translation and rotation parameters to successfully map the scan onto the patient. In more difficult cases, an object of interest such as a tumour might have shrunk or grown since the scan, or there might be new tumours that appeared recently. A good projection system should take into account all such transformations or changes of tissue and still map the scan data in a satisfying way. The problems can be summarized into the following categories:
+						<ul><li>Motion correction</li><li>Distortion correction</li><li>Alignment of images obtained at different times or with different imaging parameters</li></ul>					
 					</td>
-					<td width="5%"/>
 					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; What is a B-spline?</h2>
-						<p> B-splines are, very roughly speaking, localized Bezier curves. Only neighbouring locations are considered for every point – thus the computational complexity remains low even for a high sampling rate. Another advantage is that they keep more to the original structure – even if other data points might be significantly distorted these will only affect the transformation in their direct neighbourhood.
-						<br/>The described properties make B-splines very suitable to model human tissue. They also give a certain amount of flexibility depending on what kind of tissue is modelled – less control points are best for modelling global non-rigid transformations, while many control points allow for highly local transformations. </p>
-					</td>
+						<h2>Methods to solve the problem</h2>
+						Given that we have some form of similarity criteria, in this case usually points of interest in the image, we need to find a transformation model that satisfies these criteria well enough and then possibly optimize this model further. A first step is smoothing and re-sampling of the images, and then extracting features. We now have a measure of similarity, and can start computing the actual transformation.</td>
 				</tr>
 			</table>
 		</div>
-		<div class="section black" id="section21">
-			<h2>Point-based Registration</h2>
-			<table width="90%" border="0" style="border:0px solid white; left:47px">
-				<tr style="vertical-align: top;">
-					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; How do they work, mathematically?</h2>
-						<p>B-splines have so called basis functions. In the algorithm described here, described in Rueckert et al. 1999, the following are used:</p>
-					</td>
-					<td width="5%"/>
-					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; B-spline basis functions</h2>
-						<img src="haskell/formula1.png" alt="Formula 1"/>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section white" id="section22">
-			<h2>Point-based Registration</h2>
+		<div class="section white" id="section19">
+			<h2>Image Registration</h2>
 			<table width="90%" border="0"
-				   style="border:0px solid white; left:47px">
-				<tr style="vertical-align: top;">
-					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Free-form deformations</h2>
-						<p>From these B-splines, we can then define the free-form deformation on the object. Free-form deformations are techniques to manipulate any shape – simply put, maps between vector spaces that define a new position for every point in the given region. 
-						We can get coordinates in the transformed vector space using the 3D (since we are in a 3D space) tensor product equation, Where p<sub>(i,j,k)</sub> denotes a control point and <img src="haskell/formula3.png" alt="Formula 3"/> i.e. normalised coordinates. Note that a custom weight can be assigned to each coordinate to gain more local control over the transformation. It is suggested that this weight penalizes non-rigid transformations and doesn’t affect rigid (i.e. rotation and translation) changes.</p>
-					</td>
-					<td width="5%"/>
-					<td style="width:50%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Formulae</h2>
-						<img src="haskell/formula2.png" alt="Formula 2"/>
-						<br/><img src="haskell/formula3.png" alt="Formula 3"/>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section black" id="section23">
-			<h2>Point-based Registration</h2>
-			<table width="90%" border="0"
-				   style="border:0px solid white; left:47px">
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 				<tr>
 					<td style="width:100%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Refining the transformation</h2>
-						<p>Once the transformed grid coordinates are computed, these can either be refined further or used to create the output. This step consists simply of linear or cubic interpolation to get continuous data from the grid. If further refinement needs to be done, Rueckert et al. suggest that a hierarchy based combination of multiple FFDs at different resolutions and grid sampling rates is used. This will usually lead to even better results. </p>
-					</td>
-				</tr>
-				<tr>
-					<td style="width:100%;font-size:22px;text-align:center;">
-					<br /> <br />
-						<img src="haskell/haskell1-inverted.png" alt="Haskell sucks"/>
+						<h2>Point-based image registration</h2>
+						The Procrustes problem from linear algebra is a matrix approximation problem. In a more general sense, it concerns methods that are used to transform one set of data to represent another set of data as closely as possible. It was named after the greek robber Procrustes, who made his victims fit into his bed by either stretching them or cutting their legs off. This is, very roughly, what we want to do with images as well. Sometimes this process of image registration is also called Spatial Normalization.
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="section white" id="section24">
-			<h2>Point-based Registration</h2>
-			<table width="90%" border="0" style="border:0px solid white;left:47px">
-				<tr>
-					<td style="width:100%;font-size:22px;">
-						<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Optimal transformations</h2>
-						<p>An important part of this algorithm is the aforementioned similarity measure. This is applied to find the optimal affine transformation parameters before iterating through the different resolution levels of the B-spline grid transformation. Then during the iterations to find a non-rigid transformation, it is used as part of a cost function to determine when the transformation is good enough and the algorithm should terminate.</p>
-					</td>
-				</tr>
-				<tr>
-					<td style="width:100%;font-size:22px;text-align:center;">
-						<br/><img src="haskell/bsplines.gif" alt="B-Spline transformation"/>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section black" id="section25">
+		<div class="section black" id="section17">
 			<h2>Augmented Reality</h2>
 			
-			<table width="90%" style="border:0px solid white;left:47px">
+			<table width="90%"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
 				<td>
-					<p>With the increased use of robotic assisted, minimally invasive, surgery this has become the ideal environdment for such things as Augmented Reality. <br />
+					With the increased use of robotic assisted, minimally invasive, surgery this has become the ideal environdment for such things as Augmented Reality. <br />
 					Traditional AR methods, however, such as overlaid AR, have suffered from a lack of depth perception. <br />
-					Even when the objects in question are rendered at the correct depth, the brain perceives the virtual images to be floating, thus hampering the process.</p>
+					Even when the objects in question are rendered at the correct depth, the brain perceives the virtual images to be floating, thus hampering the process.
 				</td>
 				
 				<td>
@@ -461,84 +373,91 @@
 			</tr>
 			</table>
         </div>
-		<div class="section white" id="section26">
+		<div class="section white" id="section18">
 			<h2>Augmented Reality</h2>			
-			<table width="100%" style="border:0px solid white; left:47px">
+			<table width="100%"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
 				<td>
-					<p style="width:100%;">To perceive the image as embedded the brain expects some form of occlusion/obstruction.<br />
-					As such AR allowed the surgeon to view the medical imagery from a natural viewpoint. <br />
+					To perceive the image as embedded the brain expects some form of occlusion/obstruction.<br />
+					As such AR allowed the surgeon to view the medical imagery from a natural viewpoint <br />
 					<br />
 					&nbsp; &nbsp; &nbsp; &nbsp;<b>Positives</b>;<br />
-					 - The effectiveness and clinical benefit of AR has been widely recognised
+					 ~ The effectiveness and clinical benefit of AR has been widely recognised
 					</td>
 			</tr>
+			<tr></tr><tr></tr><tr></tr>
 			<tr>
 				<td>
-				<p style="width:100%;">&nbsp; &nbsp; &nbsp; &nbsp;<b>Negatives</b>;<br />
-					 - The application of the technique to cardiothoracic<br /> 
+				&nbsp; &nbsp; &nbsp; &nbsp;<b>Negatives</b>;<br />
+					 ~ The application of the technique to cardiothoracic<br /> 
 					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; or gastrointestinal surgery remains limited<br />
-					 - Tissue deformation can present significant challenge to AR displays<br /></p>
+					 ~ Tissue deformation can present significant challenge to AR displays<br />
 				</td>
 			</tr>
 			</table>
         </div>
-		<div class="section black" id="section27">
+		<div class="section black" id="section19">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
-				   style="border:0px solid white; left:47px;">
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
 				<td>
-				<p style="width:80%;">Techniques such as P-Q Space Rendering provide see-through vision of embedded virtual objects.
-				These maintain the projected anatomical detail of the eposed surface whilst aiding the surgery.<br /></p>
+				Techniques such as P-Q Space Rendering provide see-through vision of embedded virtual objects.
+				These maintain the projected anatomical detail of the eposed surface whilst aiding the surgery.<br />
 				</td>
 			</tr>
 			<tr>
-				<td style="font-size:10px;text-align:center;">
-					<br /> <br /> <br />
+				<td style="font-size:10px">
+					<br />
 					<img src="augimages/PQ.jpg" alt="PQ Space Rendering"/><br />
 					images curtosy of: http://www.cs.rochester.edu/~bh/igs/
 				</td>
 			</tr>
 			</table>
         </div>
-		<div class="section white" id="section28">
+		<div class="section white" id="section20">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
-				   style="border:0px solid white;left:47px">
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
 				<td>
-				<p style="width:80%">The idea of P-Q Space Rendering is to render the exposed surface as a translucent layer whilst ensuring that sufficient detail remains to aid both navigation and depth cue-ing. <br />
-				The surface geometry is based on p-q space representation. 'p' and 'q' represent the slope of the surface along the x and y axes, respectively.</p>
+				The idea of P-Q Space Rendering is to render the exposed surface as a translucent layer whilst ensuring that sufficient detail remains to aid both navigation and depth cue-ing. <br />
+				The surface geometry is based on p-q space representation. 'p' and 'q' represent the slope of the surface along the x and y axes, respectively.
 				</td>
-				<td style="text-align:center;">
+				<td width="15%"></td>
+				<td>
 					<img src="augimages/VR.jpg" alt="Good VR Examples"/>
 				</td>
 			</tr>
 			</table>
         </div>
-		<div class="section black" id="section29">
+		<div class="section black" id="section21">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
-				   style="border:0px solid white;left:47px">
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
 				<td style="font-size:28px" colspan="2">
-				<p style="width:80%;">During broncoscopic and endoscopic procedures, P-Q Space is used heavily alongside the Shape from Shading Algorithm. 
+				During broncoscopic and endoscopic procedures, P-Q Space is used heavily alongside the Shape from Shading Algorithm. 
 				This is a classical problem within the field of computer vision. 
-				It addresses the issue of extracting both surface and relative depth information from a single image.</p>
+				It addresses the issue of extracting both surface and relative depth information from a single image.
 				</td>
 			</tr>
 			<tr>
 				<td style="font-size:20px" colspan="2"><br /></td>
 			</tr>
 			<tr>
-				<td style="font-size:20px;text-align:center;" colspan="2">
+				<td style="font-size:20px" colspan="2">
 					Below is an example of shape from shading used to pull the depth information of the left image.<br />
 					The results have been mathematically protrayed as a graph.
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="text-align:center;">
+				<td colspan="2">
 					<img src="augimages/pradosFaceAndReconstruction.jpg" alt="Shape From Shading"/>
 				</td>
 			</tr>
@@ -550,10 +469,11 @@
 			</tr>
 			</table>
         </div>
-		<div class = "section white" id = "section30">
+		<div class = "section white" id = "section22">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
-				   style = "border:0px solid white;left:47px">
+				   style = "border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
 				<td>
 					<img src = "augimages/equation.jpg" alt = "equation"/>
@@ -561,34 +481,35 @@
 			</tr>
 			<tr>
 				<td style = "font-size:28px">
-					<p style="width:100%;"><b>E(x,y)</b> represents the image irradiance, the amount of light falling on a surface<br />
+					<b>E(x,y)</b> represents the image irradiance, the amount of light falling on a surface<br />
 					<b>L</b> is reflected radiance of the light-source, the amount of light radiated from a surface<br />
 					<b>d</b> is the lens diametre<br />
 					<b>f</b> is the focal length<br />
-					<b>α</b> is the angle between the optical axis and the light ray going through the centre of the observed angle</p>
+					<b>α</b> is the angle between the optical axis and the light ray going through the centre of the observed angle
 				</td>
 			</tr>
 			</table>
         </div>
-		<div class="section black" id="section31">
+		<div class="section black" id="section23">
 			<h2>Augmented Reality</h2>
-			<table width="100%"
-				   style="border:0px solid white; left:47px">
+			<table width="90%"
+				   style="border:0px solid white;
+						  position:absolute; left:47px">
 			<tr>
-				<td style="font-size:25px;width:60%;">
-					<p style="width:90%;">Given the previous equation, α is assumed negliable. However when using endoscopes this cannot be assumed as the camera and light source are assumed to be near the surface.
+				<td style="font-size: 25px">
+					Given the previous equation, α is assumed negliable. However when using endoscopes this cannot be assumed as the camera and light source are assumed to be near the surface.
 					As such, the image irradiance in this situation can be described by a constant of the camera parametres, multipled by the surface albedo, the angle between the incident ray and surface normal and a monotomically decreasing function of the surface point and light source.<br />
 					<br />
 					When using p-q space rendering the surfaces normals for each pixel are extracted (using linear local shape-from-shading algorithms derived from the necessary camera and lighting constraints). 
-					Given a 3D tomographic model, the p-q components are then extracted.</p>
+					Given a 3D tomographic model, the p-q components are then extracted.
 				</td>
-				<td style="text-align:center;width:50%">
+				<td width="50%">
 					<img src = "augimages/more PQ.jpg" alt = "more PQ"/>
 				</td>
 			</tr>			
 			</table>
         </div>
-		<div class="section white" id="section32">
+		<div class="section white" id="section24">
 			<h2>Augmented Reality</h2>
 			<table width="90%"
 				   style="border:0px solid white;
@@ -616,7 +537,7 @@
         </div>
 		
 
-		<div class="section black" id="section33">
+		<div class="section black" id="section25">
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr>
@@ -628,7 +549,7 @@
 						</p> <br />
 						<h3 style="font-size:26px;">Uses:</h3>
 						<p style="width:90%;font-size:22px;"> - surgery : more exactly, <u>surgical tracking</u>; <br />
-									    - computer vision - e.g. efficient algorithms for calculating changes in perspective in a virtual 3D space, or more advanced applications(hand-eye coordination); <br />
+									    - computer vision - e.g. efficient algorithms for calculating changes in perspective in a virtual 3D space (e.g. video games, AR), or more advanced applications in robotics, such as hand-eye coordination; <br />
 									    - 3D reconstruction (that is i.e. finding structural properties of 3D objects, such as outer shape, by using the information got out of their projections on a plane - 2D images, to be precise); <br />
 						</p>
 					</td>
@@ -642,7 +563,7 @@
         </div>
 		
 
-		<div class="section white" id="section34">
+		<div class="section white" id="section26">
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
@@ -664,7 +585,7 @@
         </div>
 		
 
-		<div class="section black" id="section35">
+		<div class="section black" id="section27">
 						<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top">
@@ -697,7 +618,7 @@
         </div>
 		
 		
-		<div class="section white" id="section36">
+		<div class="section white" id="section28">
 			<h2>Camera Calibration</h2>
 			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
 			<p style="width:90%;text-align:left;font-size:22px;">Finally, while the equations for this model could be modeled in an Euclidean geometry, we might  (I insist) use an alternative solution, quite  fit for our purpose : <u>homogeneous coordinates</u> and <u>projective geometry</u>.<br /><br />
@@ -713,20 +634,20 @@
         </div>
 		
 
-		<div class="section black" id="section37">
+		<div class="section black" id="section29">
 			<h2>Camera Calibration</h2>
 			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
 			<p style ="width:90%;font-size:22px;"> - this also means that we can model changes of coordinate system (mainly, a rotation and a translation) by product of matrices; <br/ >
 							       - moreover, it’s possible to map points at infinity; there is one point (actually, an equivalence class) for each particular direction; one of the consequences is that you can solve equations involving parallel lines much more naturally;<br />
 			</p><br />
 			<div style="text-align:center;">
-					<img src="ccimages/thumbsup-inverted.jpeg" alt="Camera Calibration: failed import;"/>
+					<img src="ccimages/thumbsup.jpeg" alt="Camera Calibration: failed import;"/>
 					<p style="width:100%;font-size:30px;">We're set!</p>
 			</div>
         </div>
 		
 
-		<div class="section white" id="section38">
+		<div class="section white" id="section30">
 			<h2>Camera Calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;font-size:22px;">
@@ -758,7 +679,7 @@
 			</div>
         </div>
 		
-		<div class="section black" id="section39">
+		<div class="section black" id="section31">
 			<h2>Camera calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
@@ -798,7 +719,7 @@
         </div>
 		
 
-		<div class="section white" id="section40">
+		<div class="section white" id="section32">
 			<h2>Camera calibration</h2>
 			<table width="100%" border ="0">
 				<tr style="vertical-align:top;">
@@ -823,7 +744,7 @@
 				</tr>
 			</table>
         </div>
-		<div class="section black" id="section41">
+		<div class="section black" id="section33">
 			<h2>Camera calibration</h2>
 			<h3 style="font-size:30px;text-align:center;">Is this it?</h3> <br />			
 			<p style="width:90%;font-size:22px;text-align:left;">
@@ -842,7 +763,7 @@
 				Many of these application might need an algorithm with a higher precision than the Direct Linear Method. For more info, Tsai's and Zhang's writings provide some non-linear methods for more specific needs. Also there's a large literature on the subject, even on the Internet. Check it out!
 			</p>
         </div>
-		<div class="section white" id="section42">
+		<div class="section white" id="section34">
 			<div class="section white" id="section26">
 			<h2>Camera calibration</h2>
 			<h3 style="font-size:30px;text-align:left;">Just for the curious</h3> <br />
@@ -862,8 +783,8 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>		
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
         <script type="text/javascript">
-		page=2;
-		lastPage=42;
+		page=1;
+		lastPage=34;
 		mydiv = document.getElementById('prev-button');
 		mydiv.style.visibility = "hidden";
 		browserThing();
@@ -872,7 +793,7 @@
 				page = toPage;
 				$('html, body').stop().animate({
 						scrollTop: $("#section"+page).offset().top}, 1500,'easeInOutExpo');
-					if(page==2){
+					if(page==1){
 					mydiv = document.getElementById('prev-button');
 					mydiv.style.visibility = "hidden";
 					mydiv = document.getElementById('next-button');
@@ -897,7 +818,7 @@
 						scrollTop: $("#section"+page).offset().top
                     }, 1500,'easeInOutExpo');
 				}
-				if(page==3){
+				if(page==2){
 					mydiv = document.getElementById('prev-button');
 					mydiv.style.visibility = "visible"; 
 				}else 
@@ -907,7 +828,7 @@
 				}
 			}
 			function prevPage(){
-				if(page!=2){
+				if(page!=1){
 					page--;
 					$('html, body').stop().animate({
 						scrollTop: $("#section"+page).offset().top
