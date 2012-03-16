@@ -1,60 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <!--<title>Computing in Surgery</title>-->
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;"/>
         <meta name="description" content="Comouting in Surgery, Image Guidance." />
         <link rel="stylesheet" href="css/style_vertical.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="css/button.css" type="text/css"/>
+		<style type ="text/css">
+			ts {line-height: 100%; font-size: 22px}
+		</style>
     </head>
-    <style>
-        <!--
-			a{
-            color:#fff;
-			font-family:Georgia;
-			font-style:italic;
-            text-decoration:none;
-			}
-			
-        a:hover{
-            text-decoration:none;
-			cursor: pointer;
-			}
-			
-        span.reference{
-            position:fixed;
-            left:10px;
-            bottom:10px;
-            font-size:13px;
-            font-weight:bold;
-			}
-			
-        span.reference a{
-            color:#fff;
-            text-shadow:1px 1px 1px #000;
-            padding-right:20px;
-			}
-			
-        span.reference a:hover{
-            color:#ddd;
-            text-decoration:none;
-			}
-		-->
-
-    </style>
-	<style type ="text/css">
-		ts {line-height: 100%; font-size: 22px}
-	</style>
     <body>
 		<div id="top-floating-bar">
             <div id="bar-text"><ul class="nav">
-				&nbsp;&nbsp;Computing in Surgery &nbsp;&nbsp;&nbsp;   
-				<a onClick="goToPage(1);">Introduction</a>&nbsp;/&nbsp; 
-                <a onClick="goToPage(2);">History</a>&nbsp;/&nbsp; 
-				<a onClick="goToPage(3);">Image Registration</a>&nbsp;/&nbsp; 
-                <a onClick="goToPage(17);">Augmented Reality</a>&nbsp;/&nbsp;
+				&nbsp;&nbsp;Computing in Surgery &nbsp; &nbsp; &nbsp;   
+				<a onClick="goToPage(1);">Introduction</a>&nbsp; / &nbsp; 
+                <a onClick="goToPage(2);">History</a>&nbsp; / &nbsp; 
+				<a onClick="goToPage(3);">Image Registration</a>&nbsp; / &nbsp; 
+                <a onClick="goToPage(17);">Augmented Reality</a>&nbsp; / &nbsp;
 				<a onClick="goToPage(25);">Camera Calibration</a>
-            </div></ul>
+            </div>
         </div>
 		<div id="next-button">
 			<a onClick="nextPage();" class="button">Next</a>
@@ -78,7 +44,7 @@
 		<!-- Image Registration  Starts Page 3 -->
 		<div class="section black" id="section3">
             <h2>Image Registration</h2>
-			<table width="90%" border="0" height="400"
+			<table width="90%" border="0"
 				   style="left:47px">
 				<tr>
 					<td style="width:50%;">
@@ -95,8 +61,8 @@
 					</td>
 					<td style="width:50%;vertical-align:top;">
 						Two types of registration. <br />
-						&nbsp;&nbsp;- Rigid registration               : Image translated, rotated or scaled. <br />
-						&nbsp;&nbsp;- Non-rigid registration (Elastic) : Local-level deformation. E.g Regression or growth of disease.
+						&nbsp; &nbsp;- Rigid registration               : Image translated, rotated or scaled. <br />
+						&nbsp; &nbsp;- Non-rigid registration (Elastic) : Local-level deformation. E.g Regression or growth of disease.
 					</td>
 				</tr>
 			</table>
@@ -373,16 +339,16 @@
 					To perceive the image as embedded the brain expects some form of occlusion/obstruction.<br />
 					As such AR allowed the surgeon to view the medical imagery from a natural viewpoint <br />
 					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;<b>Positives</b>;<br />
+					&nbsp; &nbsp; &nbsp; &nbsp;<b>Positives</b>;<br />
 					 ~ The effectiveness and clinical benefit of AR has been widely recognised
 					</td>
 			</tr>
 			<tr></tr><tr></tr><tr></tr>
 			<tr>
 				<td>
-				&nbsp;&nbsp;&nbsp;&nbsp;<b>Negatives</b>;<br />
+				&nbsp; &nbsp; &nbsp; &nbsp;<b>Negatives</b>;<br />
 					 ~ The application of the technique to cardiothoracic<br /> 
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or gastrointestinal surgery remains limited<br />
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; or gastrointestinal surgery remains limited<br />
 					 ~ Tissue deformation can present significant challenge to AR displays<br />
 				</td>
 			</tr>
@@ -533,19 +499,19 @@
 				<tr>
 					<td style="width:55%;text-align:left;vertical-align:top;">
 						<h3 style="font-size:30px;">What is camera calibration?</h3> 
-						<p style="width:90%;font-size:22px;">Basically, the process of determining the external(position,orientation) and internal(focal length, image center, scaling factors, lens distortion etc.) parameters of a camera.<br/> <br/>
-										This is required for creating a mapping between 3-dimensional coordinates(the real world) and 2-dimensional coordinates (the projective plane).<br/><br/> 
+						<p style="width:90%;font-size:22px;">Basically, the process of determining the external(position,orientation) and internal(focal length, image center, scaling factors, lens distortion etc.) parameters of a camera.<br /> <br />
+										This is required for creating a mapping between 3-dimensional coordinates(the real world) and 2-dimensional coordinates (the projective plane).<br /><br /> 
 										As it might turn out later, this is potentially <u>VERY</u> useful.
-						</p> <br/>
+						</p> <br />
 						<h3 style="font-size:26px;">Uses:</h3>
-						<p style="width:90%;font-size:22px;"> - surgery : more exactly, <u>surgical tracking</u>; <br/>
-									    - computer vision - e.g. efficient algorithms for calculating changes in perspective in a virtual 3D space (e.g. video games, AR), or more advanced applications in robotics, such as hand-eye coordination; <br/>
-									    - 3D reconstruction (that is i.e. finding structural properties of 3D objects, such as outer shape, by using the information got out of their projections on a plane - 2D images, to be precise); <br/>
+						<p style="width:90%;font-size:22px;"> - surgery : more exactly, <u>surgical tracking</u>; <br />
+									    - computer vision - e.g. efficient algorithms for calculating changes in perspective in a virtual 3D space (e.g. video games, AR), or more advanced applications in robotics, such as hand-eye coordination; <br />
+									    - 3D reconstruction (that is i.e. finding structural properties of 3D objects, such as outer shape, by using the information got out of their projections on a plane - 2D images, to be precise); <br />
 						</p>
 					</td>
 					<td style="width:45%;font-size:15px;text-align:center;vertical-align:top;">
-						<br/>
-						<img src="ccimages/cc1.jpg" alt="Camera Calibration: failed import;"/> <br/>
+						<br />
+						<img src="ccimages/cc1.jpg" alt="Camera Calibration: failed import;"/> <br />
 						Copyright:  <a href=http://www.cse.unr.edu/~aerol/projecthome/> http://www.cse.unr.edu/~aerol/projecthome/</a>  .
 					</td>
 				</tr>
@@ -558,20 +524,20 @@
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
 					<td style="width:40%;font-size:15px;">
-						<br/> 
-						<img src="ccimages/cc2.png" alt="Camera Calibration: failed import;"/> <br/>.
+						<br /> 
+						<img src="ccimages/cc2.png" alt="Camera Calibration: failed import;"/> <br />.
 					</td>
 					<td style="width:60%;font-size:22px;">
-						<h3 style="font-size:30px;text-align:center;">How does it work?</h3> <br/>
-						<p style="width:90%;text-align:justify;">There are several algorithms to choose from, each with its own benefits and drawbacks. However, most of them fit into one of two categories:<br/><br/>
-						 - Linear methods : all of the equations used to derive the parameters, or conversely, to obtain the coordinates of the 3D object (the so-called ‘feature’) are linear.It doesn’t take into account errors created by lens distortion or alignment => equations are computationally simpler. Hall and Faugeras-Toscani methods emphasize on this approach; <br/><br/>
-						 - Non-linear methods : equations involve non-linear terms (required for modelling any sort of distortion/scaling effects), resulting in a more complex computation. Zhang’s and Tsai’s work on this sort of algorithms are “influential”. The other major drawback: need for a good initial "guess" of the parameters;<br/><br/>
+						<h3 style="font-size:30px;text-align:center;">How does it work?</h3> <br />
+						<p style="width:90%;text-align:justify;">There are several algorithms to choose from, each with its own benefits and drawbacks. However, most of them fit into one of two categories:<br /><br />
+						 - Linear methods : all of the equations used to derive the parameters, or conversely, to obtain the coordinates of the 3D object (the so-called ‘feature’) are linear.It doesn’t take into account errors created by lens distortion or alignment => equations are computationally simpler. Hall and Faugeras-Toscani methods emphasize on this approach; <br /><br />
+						 - Non-linear methods : equations involve non-linear terms (required for modelling any sort of distortion/scaling effects), resulting in a more complex computation. Zhang’s and Tsai’s work on this sort of algorithms are “influential”. The other major drawback: need for a good initial "guess" of the parameters;<br /><br />
 					</p>
 					</td>					
 				</tr>	
 			</table>
 			<p style="font-size:22px;width:80%;text-align:left;">One smart approach was to use a combination of both methods in order to reduce the number of necessary takes on the algorithm (can go as high as 5 times more measurements than unknowns), without significant loss in accuracy.
-			</p><br/>
+			</p><br />
         </div>
 		
 
@@ -580,15 +546,15 @@
 			<table width="100%" border="0">
 				<tr style="vertical-align:top">
 					<td style="width:50%;font-size:22px;">
-						<h3 style="font-size:30px;text-align:left;">How does it work?</h3> <br/><br/>
+						<h3 style="font-size:30px;text-align:left;">How does it work?</h3> <br /><br />
 						<h3 style="font-size:26px;text-align:left;">Some food for thought: </h3>
-						<p style="width:90%;text-align:left;"> -How do you construct an accurate, reliable model of the typical situation?<br/>
-										       -How should the camera be mathematically modelled? <br/>
+						<p style="width:90%;text-align:left;"> -How do you construct an accurate, reliable model of the typical situation?<br />
+										       -How should the camera be mathematically modelled? <br />
 										       -Finally, how do you actually put the algorithms in practice? 
 						</p>
 					</td> 
-					<td style="width:50%;text-align:center;font-size:15px;"><br/>
-						<img src="ccimages/cc4.png"/><br/>
+					<td style="width:50%;text-align:center;font-size:15px;"><br />
+						<img src="ccimages/cc4.png"/><br />
 						Copyright: <a href=http://en.wikipedia.org/wiki/Pinhole_camera> http://en.wikipedia.org/wiki/Pinhole_camera </a>
 					</td>
 				</tr>
@@ -597,8 +563,8 @@
 						<img src="ccimages/cc42.png" alt="Camera Calibration: failed import;"/>
 					</td>
 					<td style="text-align:left;font-size:22px;">
-					<p style="width:90%;"> We can start off with a very simple camera model- the “ideal pinhole camera”.<br/>
-							       Mainly, we assume that the camera aperture is infinitely small, so that each point in space has only one projective line going through itself and its image (namely, the line that goes through the point and the aperture).<br/>
+					<p style="width:90%;"> We can start off with a very simple camera model- the “ideal pinhole camera”.<br />
+							       Mainly, we assume that the camera aperture is infinitely small, so that each point in space has only one projective line going through itself and its image (namely, the line that goes through the point and the aperture).<br />
     							       There is a mapping between each point in space and the projective plane(the image) - assuming, of course, that we refer both points in the same system of coordinates; at its simplest, a feature can be represented by a point in space.
 					</p>
 					</td>
@@ -611,13 +577,13 @@
 		<div class="section white" id="section28">
 			<h2>Camera Calibration</h2>
 			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
-			<p style="width:90%;text-align:left;font-size:22px;">Finally, while the equations for this model could be modeled in an Euclidean geometry, we might  (I insist) use an alternative solution, quite  fit for our purpose : <u>homogeneous coordinates</u> and <u>projective geometry</u>.<br/><br/>
+			<p style="width:90%;text-align:left;font-size:22px;">Finally, while the equations for this model could be modeled in an Euclidean geometry, we might  (I insist) use an alternative solution, quite  fit for our purpose : <u>homogeneous coordinates</u> and <u>projective geometry</u>.<br /><br />
 
-    									     Things work somewhat like this:<br/><br/>
-									     - if you represent a point (x, y) in the plane, its homogeneous coordinates are of the form  (xZ, yZ, Z), where Z is a randomly chosen real number (mainly, the set of all values that preserve this [xZ:yZ:Z] ratio <u>forms an equivalence class</u> in 3D space! ); you recover your original coordinates by setting Z to 1 - quite expected;<br/>
-    									     - alternatively, a point caractherised by 3 (or ,more generally, n ) dimensions in Euclidean Space is caractherised by 4 (n+1, respectively) homogeneous coordinates, which preserve the initial ratio in the Euclidean Space (e.g. : [x1 :x2 : … : xn : 1] );<br/><br/>
-									     Why does this simplify things in our problem? several reasons:<br/>
-        								     - imagine that the new coordinate in the homogeneous system (in the case of the 2D point (x,y)) was actually a coordinate in 3D space, according to the 3rd axis.<br/>      What would points in the same equivalence class represent?<br/>What set would the set of points with fixed 3rd coordinates represent?</br>
+    									     Things work somewhat like this:<br /><br />
+									     - if you represent a point (x, y) in the plane, its homogeneous coordinates are of the form  (xZ, yZ, Z), where Z is a randomly chosen real number (mainly, the set of all values that preserve this [xZ:yZ:Z] ratio <u>forms an equivalence class</u> in 3D space! ); you recover your original coordinates by setting Z to 1 - quite expected;<br />
+    									     - alternatively, a point caractherised by 3 (or ,more generally, n ) dimensions in Euclidean Space is caractherised by 4 (n+1, respectively) homogeneous coordinates, which preserve the initial ratio in the Euclidean Space (e.g. : [x1 :x2 : … : xn : 1] );<br /><br />
+									     Why does this simplify things in our problem? several reasons:<br />
+        								     - imagine that the new coordinate in the homogeneous system (in the case of the 2D point (x,y)) was actually a coordinate in 3D space, according to the 3rd axis.<br />      What would points in the same equivalence class represent?<br />What set would the set of points with fixed 3rd coordinates represent?<br />
         								     - translation is easier representable as a square matrix ; for example, translation of points (x,y) to points (x+t1,y1+t2), with t1 t2 fixed constants, would be modelled by the equation:
 				<div style="text-align:center"><img src="ccimages/translationmat.png" alt="Camera Calibration: failed import;" align="center"/></div>
 			</p>
@@ -627,9 +593,9 @@
 		<div class="section black" id="section29">
 			<h2>Camera Calibration</h2>
 			<h3 style="text-align:left;font-size:30px;"> New way of seeing things! </h3>
-			<p style ="width:90%;font-size:22px;"> - this also means that we can model changes of coordinate system (mainly, a rotation and a translation) by product of matrices; <br/>
-							       - moreover, it’s possible to map points at infinity; there is one point (actually, an equivalence class) for each particular direction; one of the consequences is that you can solve equations involving parallel lines much more naturally;<br/>
-			</p><br/>
+			<p style ="width:90%;font-size:22px;"> - this also means that we can model changes of coordinate system (mainly, a rotation and a translation) by product of matrices; <br/ >
+							       - moreover, it’s possible to map points at infinity; there is one point (actually, an equivalence class) for each particular direction; one of the consequences is that you can solve equations involving parallel lines much more naturally;<br />
+			</p><br />
 			<div style="text-align:center;">
 					<img src="ccimages/thumbsup.jpeg" alt="Camera Calibration: failed import;"/>
 					<p style="width:100%;font-size:30px;">We're set!</p>
@@ -643,26 +609,26 @@
 				<tr style="vertical-align:top;font-size:22px;">
 					<td style="width:50%;text-align:left;">
 						<h3 style="font-size:30px;">What to do?</h3>
-						<p style="width:80%;"> Well, whatever our purpose is, we can’t really do anything without finding that camera (or projection) matrix!</br>
-   						    - Acting as a mapping between 3D homogeneous coordinates (4-by-1 matrices) and 2D homogeneous coordinates (3-by-1 matrices), our matrix will probably be 3-by-4:<br/><br/>
+						<p style="width:80%;"> Well, whatever our purpose is, we can’t really do anything without finding that camera (or projection) matrix!<br />
+   						    - Acting as a mapping between 3D homogeneous coordinates (4-by-1 matrices) and 2D homogeneous coordinates (3-by-1 matrices), our matrix will probably be 3-by-4:<br /><br />
 						    Believe it or not, this is the general equation.
 						</p>				
 					</td>
-					<td style="width:50%;text-align:center;"><br/><br/><br/>
+					<td style="width:50%;text-align:center;"><br /><br /><br />
 						<img src="ccimages/generalmateq.gif" alt="Camera Calibration: failed import;"/>
 					</td>
 				</tr>
 			</table>
 			<div style="width:100%;font-size:22px;text-align:left;">
-				<p style="width:90%;">-Of course, the parameters depend on all possible factors that can influence the mapping of 3D features to the image (potentially very many);</br>
+				<p style="width:90%;">-Of course, the parameters depend on all possible factors that can influence the mapping of 3D features to the image (potentially very many);<br />
 
-						      -In our simple pinhole camera model we assume just some of these factors to be part of our matrix, and we’ll set some others later on;<br/><br/>
+						      -In our simple pinhole camera model we assume just some of these factors to be part of our matrix, and we’ll set some others later on;<br /><br />
 
-						      -<u>External parameters</u>: <u>position</u> of the camera relative to the original system of the projected object; <u>orientation</u> of the camera relative to ... (it will very rarely be the case that the camera’s coordinate system is aligned with that of the object);<br/><br/>
+						      -<u>External parameters</u>: <u>position</u> of the camera relative to the original system of the projected object; <u>orientation</u> of the camera relative to ... (it will very rarely be the case that the camera’s coordinate system is aligned with that of the object);<br /><br />
 
 -<u>Internal parameters</u>:
 
-        					      -<u>scaling factor</u> (width-height ratio for pixels); <u>focal length</u> (this one is responsible for any sense of perspective in your image, and would be really difficult to model in its natural form);<br/>
+        					      -<u>scaling factor</u> (width-height ratio for pixels); <u>focal length</u> (this one is responsible for any sense of perspective in your image, and would be really difficult to model in its natural form);<br />
 
 						      -we’ll avoid in-depth modelling of focal length or distortion in the linear model; keep in mind though that because of our simplifications, higher errors are prone to occur; 
 				</p> 
@@ -673,33 +639,33 @@
 			<h2>Camera calibration</h2>
 			<table width="100%" border="0">
 				<tr style="vertical-align:top;">
-					<td colspan="2"style="width:40%;font-size:15px;text-align:center;"><br/><br/>
-						<img src="ccimages/eq1a.gif" alt="Camera Calibration: failed import;"/><br/><br/>
-						<img src="ccimages/eq1b.gif" alt="Camera Calibration: failed import;"/><br/>
+					<td colspan="2"style="width:40%;font-size:15px;text-align:center;"><br /><br />
+						<img src="ccimages/eq1a.gif" alt="Camera Calibration: failed import;"/><br /><br />
+						<img src="ccimages/eq1b.gif" alt="Camera Calibration: failed import;"/><br />
 					</td>
 					<td style="width:60%;font-size:22px;">
-						<h3 style="font-size:30px;text-align:center;">Determining the camera matrix</h3> <br/>
+						<h3 style="font-size:30px;text-align:center;">Determining the camera matrix</h3> <br />
 						<p style="width:90%;text-align:left;">
-							The mathematics is not too complicated - assuming you know how to work with matrices.<br/><br/>
+							The mathematics is not too complicated - assuming you know how to work with matrices.<br /><br />
 
 							Assuming you had a feature at [x,y,z,1] in the camera’s system (typically you use a checkerboard-like grid called "Tsai grid" to find out the coordinates easily), and that the image plane was at distance f (focal length) from the camera, on the z-axis, one could work out the coodinates of the image point by triangle similarity (equations on left).
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<td style="width:20%;font-size:15px;text-align:center;"><br/>
-						<img src="ccimages/ccenter.png" alt="Camera Calibration: failed import;"/><br/>
+					<td style="width:20%;font-size:15px;text-align:center;"><br />
+						<img src="ccimages/ccenter.png" alt="Camera Calibration: failed import;"/><br />
 						Copyright: <a href=http://www.umiacs.umd.edu/~ramani/cmsc828d/lecture9.pdf> http://www.umiacs.umd.edu/~ramani/cmsc828d/lecture9.pdf </a>
 					</td>
 					<td style ="text-align:center;">
-						<img src="ccimages/pixeq.gif" alt="Camera Calibration: failed import;"/><br/>						
-						<img src="ccimages/Kmateq.gif" alt="Camera Calibration: failed import;"/><br/>
-						<img src="ccimages/alphaeq.gif" alt="Camera Calibration: failed import;"/></br>
+						<img src="ccimages/pixeq.gif" alt="Camera Calibration: failed import;"/><br />						
+						<img src="ccimages/Kmateq.gif" alt="Camera Calibration: failed import;"/><br />
+						<img src="ccimages/alphaeq.gif" alt="Camera Calibration: failed import;"/><br />
 					</td>
 					<td style="width:60%;font-size:22px;">
 						<p style="width:90%;font-size:22px;text-align:left;">
-							This, combined with information regarding the image center and pixel size, yields us a new result.<br/><br/>
-							(x0,y0) represents the image center, and kx and ky are scaling factors for pixels. <br/><br/>
+							This, combined with information regarding the image center and pixel size, yields us a new result.<br /><br />
+							(x0,y0) represents the image center, and kx and ky are scaling factors for pixels. <br /><br />
 							The 3x4 K matrix (on the left) is your most basic calibration matrix.
 						</p>
 					
@@ -715,20 +681,20 @@
 				<tr style="vertical-align:top;">
 					<td style="width:60%;font-size:22px;text-align:left;">
 						<h3 style="font-size:30px;text-align:left;">Determining the camera matrix</h3> 
-						<p style="width:90%">Unfortunately, it is very rare that the coordinate system of the target is aligned to that of the camera. We must first perform two transformations, mainly a rotation and a translation. <br/><br/>
-								     It turns out the matrix that describes this transformation looks something like this:<br/><br/>
-								     Therefore, we can multiply the two matrices to obtain our real camera matrix:<br/></br>
-								     This projection matrix P has around 11 variable parameters : 5 from K, 3 from R and 3 from the translation vector. There are quite a lot of unknowns!  <br/> 
+						<p style="width:90%">Unfortunately, it is very rare that the coordinate system of the target is aligned to that of the camera. We must first perform two transformations, mainly a rotation and a translation. <br /><br />
+								     It turns out the matrix that describes this transformation looks something like this:<br /><br />
+								     Therefore, we can multiply the two matrices to obtain our real camera matrix:<br /></br />
+								     This projection matrix P has around 11 variable parameters : 5 from K, 3 from R and 3 from the translation vector. There are quite a lot of unknowns!  <br /> 
 
-								     Cool, this is how it looks in theory, but how do we determine it in practice? <br/><br/>
-								     We use certain points we know about, we project them through the camera we have, and we use the info on the image points to write these equations:<br/><br/>
+								     Cool, this is how it looks in theory, but how do we determine it in practice? <br /><br />
+								     We use certain points we know about, we project them through the camera we have, and we use the info on the image points to write these equations:<br /><br 
 								     Since each pair of real point-image point give us two equations, it would be expected that 6 points be enough to find our parameters. However, due to the possibility of high errors, it is recommended that more points be used. This is called the Direct Linear Method.
 						</p>
 					</td>
-					<td style="width:40%;font-size:15px;text-align:center;"><br/><br/><br/>
-						<img src="ccimages/RTmat.gif" alt="Camera Calibration: failed import;"><br/></br></br>
-						<img src="ccimages/finalmat.gif" alt="Camera Calibration: failed import;"/><br/></br><br/><br/>
-						<img src="ccimages/detmat1.gif" alt="Camera Calibration: failed import;"/><br/>
+					<td style="width:40%;font-size:15px;text-align:center;"><br /><br /><br />
+						<img src="ccimages/RTmat.gif" alt="Camera Calibration: failed import;"><br /><br /><br />
+						<img src="ccimages/finalmat.gif" alt="Camera Calibration: failed import;"/><br /><br /><br /><br />
+						<img src="ccimages/detmat1.gif" alt="Camera Calibration: failed import;"/><br />
 						Copyright: <a href=http://www.peterhillman.org.uk> http://www.peterhillman.org.uk </a>
 					</td>
 				</tr>
@@ -736,33 +702,33 @@
         </div>
 		<div class="section black" id="section33">
 			<h2>Camera calibration</h2>
-			<h3 style="font-size:30px;text-align:center;">Is this it?</h3> <br/>			
+			<h3 style="font-size:30px;text-align:center;">Is this it?</h3> <br />			
 			<p style="width:90%;font-size:22px;text-align:left;">
-				Well, nothing should stop you from implementing all this on your computer and start your career as a video game designer.<br/>
-			</p><br/>
+				Well, nothing should stop you from implementing all this on your computer and start your career as a video game designer.<br />
+			</p><br />
 			<h3 style="font-size:26px;text-align:left;">Anything else to it?</h3>
 			<p style="width:95%;font-size:22px;text-align:left;float:right;">
-				Definitely.<br/>
-					<img src="ccimages/endoscope.jpg"align="right"/></br>
-				Uses for camera calibration range widely, from calibrating your personal camera, to modelling computer vision, to surgery, especially surgical tracking.</br>
-				- embedded light cameras for tracking position of different instruments, relative to different markers; <br/>
-    				- small cameras made for endoscopic interventions (calibration must be much more precise), resulting in an efficient and non-invasive way of doing some types of surgery; <br/>
+				Definitely.<br />
+					<img src="ccimages/endoscope.jpg"align="right"/><br />
+				Uses for camera calibration range widely, from calibrating your personal camera, to modelling computer vision, to surgery, especially surgical tracking.<br />
+				- embedded light cameras for tracking position of different instruments, relative to different markers; <br />
+    				- small cameras made for endoscopic interventions (calibration must be much more precise), resulting in an efficient and non-invasive way of doing some types of surgery; <br />
 				
-				- X-ray cameras (Selby's method);<br/>
-    				- possibly 3D reconstruction of surfaces; <br/><br/>
+				- X-ray cameras (Selby's method);<br />
+    				- possibly 3D reconstruction of surfaces; <br /><br />
 				Many of these application might need an algorithm with a higher precision than the Direct Linear Method. For more info, Tsai's and Zhang's writings provide some non-linear methods for more specific needs. Also there's a large literature on the subject, even on the Internet. Check it out!
 			</p>
         </div>
 		<div class="section white" id="section34">
 			<div class="section white" id="section26">
 			<h2>Camera calibration</h2>
-			<h3 style="font-size:30px;text-align:left;">Just for the curious</h3> <br/>
+			<h3 style="font-size:30px;text-align:left;">Just for the curious</h3> <br />
 			<p style="width:90%;font-size:22px;text-align:left;">
-				If the last one got your attention, the main algorithm for 3D recovery is quite easy: once you have two cameras (with known projection matrices P1, P2) which observe the same point, you have to solve the equations: <br/>
-					<img src="ccimages/rec3d.gif" alt="Camera Calibration: failed import;"/></br>
-				In something more visual, this translates to finding the intersection of two projective lines [image - epipolar geometry]:</br></br>
+				If the last one got your attention, the main algorithm for 3D recovery is quite easy: once you have two cameras (with known projection matrices P1, P2) which observe the same point, you have to solve the equations: <br />
+					<img src="ccimages/rec3d.gif" alt="Camera Calibration: failed import;"/><br />
+				In something more visual, this translates to finding the intersection of two projective lines [image - epipolar geometry]:<br /><br />
 				<div style="text-align:center;font-size:15px"> 				
-					<img src="ccimages/2cam3d.jpg" alt="Camera Calibration: failed import;"/></br>
+					<img src="ccimages/2cam3d.jpg" alt="Camera Calibration: failed import;"/><br />
 				</div>
 			</p>
 
